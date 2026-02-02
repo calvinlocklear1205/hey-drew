@@ -4899,8 +4899,8 @@
             <div class="message-content">
               <div class="message-bubble drew">
                 <p>Hey there! 👋 I'm Drew, your tax strategy assistant.</p>
-                <p>To find the best tax savings for your business, I'll need to take a look at your documents first.</p>
-                <p>Ready to upload your tax documents?</p>
+                <p>Before we dive in, I'd love to learn a bit about your business so I can find the best strategies for you.</p>
+                <p>What type of business do you run?</p>
               </div>
               <span class="message-time">10:30 AM</span>
             </div>
@@ -4908,8 +4908,9 @@
         </div>
 
         <div class="chat-suggestions" id="chat-suggestions">
-          <button class="suggestion-chip" data-response="upload-docs">📄 Upload Documents</button>
-          <button class="suggestion-chip" data-response="what-docs">What docs do I need?</button>
+          <button class="suggestion-chip" data-response="biz-retail">🏪 Retail / E-commerce</button>
+          <button class="suggestion-chip" data-response="biz-service">💼 Service Business</button>
+          <button class="suggestion-chip" data-response="biz-consulting">🎯 Consulting</button>
         </div>
 
         <div class="chat-input-area">
@@ -6521,6 +6522,141 @@
     }
 
     function handleUserResponse(response) {
+      // Handle business type questions - CONVERSATIONAL FLOW
+      if (response === 'biz-retail' || response === 'biz-service' || response === 'biz-consulting') {
+        const bizTypes = {
+          'biz-retail': 'Retail / E-commerce',
+          'biz-service': 'Service business',
+          'biz-consulting': 'Consulting'
+        };
+        addUserMessage(bizTypes[response]);
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`${bizTypes[response]} — great! 🎯\n\nThat opens up some interesting tax strategy opportunities.\n\nQuick question: Do you work from home or use part of your home for business?`);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '🏠 Yes, I work from home', action: 'work-from-home-yes'},
+              {label: '🏢 No, separate office', action: 'work-from-home-no'}
+            ]);
+          }, 1200);
+        }, 500);
+        return;
+      }
+
+      // Handle work from home question
+      if (response === 'work-from-home-yes') {
+        addUserMessage("Yes, I work from home");
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`Perfect! That's actually really valuable to know. 🏠\n\nDo you ever host business meetings, client consultations, or team gatherings at your home?`);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '✅ Yes, sometimes', action: 'meetings-at-home-yes'},
+              {label: '❌ No, not really', action: 'meetings-at-home-no'}
+            ]);
+          }, 1200);
+        }, 500);
+        return;
+      }
+
+      if (response === 'work-from-home-no') {
+        addUserMessage("No, I have a separate office");
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`Got it! Having a dedicated business space is great for organization.\n\nDo you have any employees or contractors who help with your business?`);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '👥 Yes, I have help', action: 'has-employees'},
+              {label: '🙋 Just me', action: 'solo-business'}
+            ]);
+          }, 1200);
+        }, 500);
+        return;
+      }
+
+      // Handle meetings at home - show Augusta Rule strategy
+      if (response === 'meetings-at-home-yes') {
+        addUserMessage("Yes, I host meetings at home sometimes");
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`This is exciting! 🎉 Based on what you've told me, you might qualify for a strategy called the <strong>Augusta Rule</strong>.\n\nIt lets you rent your home to your business for up to 14 days per year — completely tax-free to you personally, and a deductible expense for your business!`, true, true);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '😮 Tell me more!', action: 'augusta-more'},
+              {label: '📄 Upload docs to verify', action: 'upload-after-strategy'}
+            ]);
+          }, 1500);
+        }, 500);
+        return;
+      }
+
+      if (response === 'meetings-at-home-no' || response === 'has-employees' || response === 'solo-business') {
+        const messages = {
+          'meetings-at-home-no': "No, not really",
+          'has-employees': "Yes, I have employees/contractors",
+          'solo-business': "It's just me"
+        };
+        addUserMessage(messages[response]);
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`Thanks for sharing! I'm already seeing some potential opportunities for your situation. 💡\n\nTo find the exact strategies and calculate your potential savings, I'll need to take a quick look at your tax documents.\n\nReady to upload?`);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '📄 Upload Documents', action: 'upload-docs'},
+              {label: '❓ What docs do I need?', action: 'what-docs'}
+            ]);
+          }, 1200);
+        }, 500);
+        return;
+      }
+
+      // Handle Augusta Rule more info
+      if (response === 'augusta-more') {
+        addUserMessage("Tell me more about that!");
+        chatSuggestions.style.opacity = '0';
+
+        setTimeout(() => {
+          showTypingIndicator();
+          setTimeout(() => {
+            removeTypingIndicator();
+            addDrewMessage(`Here's how the Augusta Rule works:\n\n<strong>1.</strong> Your business pays YOU rent for using your home for meetings (at fair market rates)\n\n<strong>2.</strong> Up to 14 days/year, you don't report this income personally\n\n<strong>3.</strong> Your business deducts it as a legitimate expense\n\n<strong>Potential savings:</strong> $5,000-$15,000+ per year depending on your home value and meeting frequency.\n\nTo verify you qualify and calculate your exact savings, I just need to review your tax documents. 📊`, true);
+            chatSuggestions.style.opacity = '1';
+            updateSuggestions([
+              {label: '📄 Upload docs to verify', action: 'upload-after-strategy'},
+              {label: 'What docs do I need?', action: 'what-docs'}
+            ]);
+          }, 1800);
+        }, 500);
+        return;
+      }
+
+      // Handle upload after seeing strategy
+      if (response === 'upload-after-strategy') {
+        addUserMessage("Let's verify my eligibility");
+        showScreen('upload-screen');
+        return;
+      }
+
       // Handle upload docs action
       if (response === 'upload-docs') {
         addUserMessage("I'll upload my documents now");
