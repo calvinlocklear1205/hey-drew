@@ -6996,7 +6996,7 @@
     </main>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Screen list for navigation
     const allScreens = [
       'token-screen', 'signup-screen', 'business-profile-screen', 'personal-profile-screen', 'profile-complete-screen',
@@ -7906,7 +7906,7 @@
       document.getElementById('task-modal').classList.add('active');
     }
 
-            <button class="task-detail-close" onclick="closeTaskModal()">×</button>
+    function closeTaskModal() {
       document.getElementById('task-modal').classList.remove('active');
     }
 
