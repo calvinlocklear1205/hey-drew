@@ -261,27 +261,60 @@
     }
 
     /* Onboarding pages - centered card style */
-    .onboarding-page {
-      max-width: 480px;
+    .onboarding-card {
+      max-width: 600px;
       width: 100%;
       background: var(--white);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-medium);
-      padding: 40px;
+      padding: 48px;
       margin: 0 auto;
+    }
+
+    .onboarding-card .page-header {
+      padding: 0;
+      margin-bottom: 32px;
+    }
+
+    .onboarding-card .page-title {
+      font-size: 24px;
+    }
+
+    .onboarding-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .onboarding-content {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .onboarding-form {
+      text-align: left;
+    }
+
+    .onboarding-form .input-group {
+      margin-bottom: 20px;
+    }
+
+    .onboarding-actions {
+      margin-top: 32px;
     }
 
     .app-container.onboarding .page {
       display: none;
-      padding: 0;
-      min-height: auto;
+      padding: 32px;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
     }
 
     .app-container.onboarding .page.active {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
     }
 
     /* Common Components */
@@ -451,11 +484,22 @@
     /* ==================== */
     #token-screen {
       background: linear-gradient(180deg, #E8F7F5 0%, var(--white) 40%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .token-screen-content {
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
     }
 
     .token-hero {
       text-align: center;
-      padding: 30px 24px 40px;
+      padding: 0 0 40px;
     }
 
     .mascot-container {
@@ -565,7 +609,8 @@
     }
 
     .token-form {
-      padding: 0 24px;
+      padding: 0;
+      width: 100%;
     }
 
     .token-input-container {
@@ -609,7 +654,8 @@
     }
 
     .token-actions {
-      padding: 32px 24px;
+      padding: 32px 0;
+      width: 100%;
     }
 
     .token-error-banner {
@@ -659,11 +705,28 @@
     /* ==================== */
     #signup-screen {
       background: linear-gradient(180deg, var(--teal-light) 0%, var(--white) 30%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signup-screen-content {
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    .signup-back-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .signup-header {
       text-align: center;
-      padding: 20px 24px 30px;
+      padding: 0 0 30px;
     }
 
     .success-checkmark {
@@ -706,7 +769,8 @@
     }
 
     .signup-form {
-      padding: 0 24px;
+      padding: 0;
+      text-align: left;
     }
 
     .password-requirements {
@@ -763,7 +827,7 @@
     }
 
     .signup-actions {
-      padding: 24px;
+      padding: 24px 0 0;
     }
 
     /* ==================== */
@@ -5204,6 +5268,7 @@
       
       <!-- ACCESS TOKEN SCREEN -->
       <div id="token-screen" class="page active">
+        <div class="token-screen-content">
         <div class="token-hero">
           <div class="invite-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5254,80 +5319,84 @@
         <div class="provider-info">
           <p>Access provided by <strong>Aspire4More</strong></p>
         </div>
+        </div>
       </div>
 
       <!-- SIGNUP SCREEN -->
       <div id="signup-screen" class="page">
-        <div class="page-header">
-          <button class="back-btn" onclick="showScreen('token-screen')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-          </button>
-          <h1 class="page-title">Create Account</h1>
-        </div>
-
-        <div class="signup-header">
-          <div class="success-checkmark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
-          </div>
-          <h2 class="signup-title">Token Verified!</h2>
-          <p class="signup-subtitle">Now let's secure your account</p>
-        </div>
-
-        <div class="signup-form">
-          <div class="input-group">
-            <label class="input-label">Create Password</label>
-            <input type="password" class="input-field" placeholder="Enter password" id="signup-password">
+        <div class="signup-screen-content">
+          <div class="signup-back-header">
+            <button class="back-btn" onclick="showScreen('token-screen')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <h1 class="page-title">Create Account</h1>
           </div>
 
-          <div class="input-group">
-            <label class="input-label">Confirm Password</label>
-            <input type="password" class="input-field" placeholder="Confirm password" id="signup-confirm">
-          </div>
-
-          <div class="password-requirements">
-            <p>Password must have:</p>
-            <div class="requirement" id="req-length">
-              <div class="requirement-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>At least 8 characters</span>
+          <div class="signup-header">
+            <div class="success-checkmark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
             </div>
-            <div class="requirement" id="req-upper">
-              <div class="requirement-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>One uppercase letter</span>
+            <h2 class="signup-title">Token Verified!</h2>
+            <p class="signup-subtitle">Now let's secure your account</p>
+          </div>
+
+          <div class="signup-form">
+            <div class="input-group">
+              <label class="input-label">Create Password</label>
+              <input type="password" class="input-field" placeholder="Enter password" id="signup-password">
             </div>
-            <div class="requirement" id="req-number">
-              <div class="requirement-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+
+            <div class="input-group">
+              <label class="input-label">Confirm Password</label>
+              <input type="password" class="input-field" placeholder="Confirm password" id="signup-confirm">
+            </div>
+
+            <div class="password-requirements">
+              <p>Password must have:</p>
+              <div class="requirement" id="req-length">
+                <div class="requirement-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <span>At least 8 characters</span>
               </div>
-              <span>One number</span>
+              <div class="requirement" id="req-upper">
+                <div class="requirement-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <span>One uppercase letter</span>
+              </div>
+              <div class="requirement" id="req-number">
+                <div class="requirement-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <span>One number</span>
+              </div>
+            </div>
+
+            <div class="signup-actions">
+              <button class="btn-primary" id="create-account-btn">Create My Account</button>
             </div>
           </div>
-        </div>
-
-        <div class="signup-actions">
-          <button class="btn-primary" id="create-account-btn">Create My Account</button>
         </div>
       </div>
 
       <!-- BUSINESS PROFILE SCREEN -->
       <div id="business-profile-screen" class="page">
-        <div class="page-header">
-          <button class="back-btn" onclick="showScreen('signup-screen')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-          </button>
-          <h1 class="page-title">Set Up Your Profile</h1>
-        </div>
+        <div class="onboarding-card">
+          <div class="page-header">
+            <button class="back-btn" onclick="showScreen('signup-screen')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <h1 class="page-title">Set Up Your Profile</h1>
+          </div>
 
-        <div class="onboarding-progress">
+          <div class="onboarding-progress">
           <div class="progress-step active">
             <div class="progress-dot"></div>
             <span>Business</span>
@@ -5414,9 +5483,11 @@
           <button class="btn-primary" id="to-personal-btn">Continue</button>
         </div>
       </div>
+    </div>
 
-      <!-- PERSONAL PROFILE SCREEN -->
-      <div id="personal-profile-screen" class="page">
+    <!-- PERSONAL PROFILE SCREEN -->
+    <div id="personal-profile-screen" class="page">
+      <div class="onboarding-card">
         <div class="page-header">
           <button class="back-btn" onclick="showScreen('business-profile-screen')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5489,8 +5560,9 @@
           <button class="btn-primary" id="complete-profile-btn">Complete Setup</button>
         </div>
       </div>
+    </div>
 
-      <!-- PROFILE COMPLETE SCREEN -->
+    <!-- PROFILE COMPLETE SCREEN -->
       <div id="profile-complete-screen" class="page">
         <div class="completion-container">
           <div class="completion-animation">
@@ -5561,7 +5633,7 @@
 
         <div class="welcome-section">
           <p class="welcome-greeting">Good morning,</p>
-          <h1 class="welcome-name">Sarah 😊</h1>
+          <h1 class="welcome-name">Sarah 👋</h1>
         </div>
 
         <div class="case-card">
@@ -5576,11 +5648,11 @@
             </div>
             <div class="case-card-body-content">
               <div class="drew-preview-message" style="background: #f5f5f5; border-radius: 16px; padding: 14px 18px; margin: 8px 0 20px 0;">
-                <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5;">Hey, it's Drew! 😊 Let's get to know your business a bit so I can find the best tax strategies for you.</p>
+                <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5;">Hey, it's Drew! 👋 Let's get to know your business a bit so I can find the best tax strategies for you.</p>
               </div>
             </div>
             <div class="case-actions">
-              <button class="btn-primary" onclick="showScreen('chat-screen')">😊¬ Chat with Drew</button>
+              <button class="btn-primary" onclick="showScreen('chat-screen')">💬 Chat with Drew</button>
             </div>
           </div>
         </div>
@@ -5588,7 +5660,7 @@
         <!-- Next Task Up Section -->
         <div class="next-task" id="dashboard-next-task">
           <div class="next-task-header">
-            <span class="next-task-icon">😊¯</span>
+            <span class="next-task-icon">📋</span>
             <h3 class="next-task-title">Next Task Up</h3>
           </div>
           <div id="next-task-container">
@@ -5679,7 +5751,7 @@
             </div>
             <div class="message-content">
               <div class="message-bubble drew">
-                <p>Hey there! 😊 I'm Drew, your tax strategy assistant.</p>
+                <p>Hey there! 👋 I'm Drew, your tax strategy assistant.</p>
                 <p>Before we dive in, I'd love to learn a bit about your business so I can find the best strategies for you.</p>
                 <p>What type of business do you run?</p>
               </div>
@@ -5689,9 +5761,9 @@
         </div>
 
         <div class="chat-suggestions" id="chat-suggestions">
-          <button class="suggestion-chip" data-response="biz-retail">😊ª Retail / E-commerce</button>
-          <button class="suggestion-chip" data-response="biz-service">😊¼ Service Business</button>
-          <button class="suggestion-chip" data-response="biz-consulting">😊¯ Consulting</button>
+          <button class="suggestion-chip" data-response="biz-retail">🛒 Retail / E-commerce</button>
+          <button class="suggestion-chip" data-response="biz-service">💼 Service Business</button>
+          <button class="suggestion-chip" data-response="biz-consulting">📋 Consulting</button>
         </div>
 
         <div class="chat-input-area">
@@ -5828,7 +5900,7 @@
             </div>
 
             <div class="task-group">
-              <h3 class="task-group-header">😊 UPCOMING</h3>
+              <h3 class="task-group-header">📅 UPCOMING</h3>
               <div class="task-item" onclick="showTaskDetail(4)">
                 <div class="task-checkbox" onclick="event.stopPropagation(); toggleTask(4)"></div>
                 <div class="task-content">
@@ -5913,28 +5985,28 @@
             <h3 style="margin-bottom:20px;">Required Documents</h3>
             <div class="document-list">
               <div class="document-item">
-                <div class="document-icon">😊</div>
+                <div class="document-icon">📄</div>
                 <div class="document-info">
                   <div class="document-name">Written Rental Agreement</div>
                   <div class="document-desc">Agreement between you and your business entity</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">😊</div>
+                <div class="document-icon">📋</div>
                 <div class="document-info">
                   <div class="document-name">Meeting Minutes Template</div>
                   <div class="document-desc">Documentation of business meetings held at home</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">😊µ</div>
+                <div class="document-icon">💵</div>
                 <div class="document-info">
                   <div class="document-name">Invoice Templates</div>
                   <div class="document-desc">Quarterly invoices for rental fees</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">😊 </div>
+                <div class="document-icon">🏠</div>
                 <div class="document-info">
                   <div class="document-name">Comparable Rental Rates</div>
                   <div class="document-desc">Market research for fair rental value</div>
@@ -6334,7 +6406,7 @@
             <div class="thread-message-content">
               <div class="thread-message-sender">Sarah Chen <span>• Tax Specialist</span></div>
               <div class="thread-message-bubble">
-                <p>Hi there! 😊</p>
+                <p>Hi there! 👋</p>
                 <p>We're reviewing your uploaded documents and noticed that your submission is missing a <strong>Schedule C (Form 1040)</strong> for your business income.</p>
                 <p>This form is essential for us to analyze your self-employment deductions and identify potential savings strategies.</p>
               </div>
@@ -6484,7 +6556,7 @@
             <div class="thread-message-content">
               <div class="thread-message-sender">HeyDrew System</div>
               <div class="thread-message-bubble system">
-                <p>😊 <strong>Welcome to HeyDrew!</strong></p>
+                <p>🎉 <strong>Welcome to HeyDrew!</strong></p>
                 <p>Your account has been created and your tax case for 2024 is ready.</p>
                 <p><strong>Here's what happens next:</strong></p>
                 <ol>
@@ -7193,7 +7265,7 @@
       
       // Also update the case home screen
       document.querySelector('.case-business-name').textContent = businessName;
-      document.querySelector('.welcome-name').textContent = firstName + ' 😊';
+      document.querySelector('.welcome-name').textContent = firstName + ' 👋';
       document.querySelector('.case-year-badge').textContent = 'Tax Year ' + selectedYear;
       
       // Update settings screen with user name
@@ -7529,11 +7601,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`${bizTypes[response]} — great! 😊¯\n\nThat opens up some interesting tax strategy opportunities.\n\nQuick question: Do you work from home or use part of your home for business?`);
+            addDrewMessage(`${bizTypes[response]} — great! 📋\n\nThat opens up some interesting tax strategy opportunities.\n\nQuick question: Do you work from home or use part of your home for business?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊  Yes, I work from home', action: 'work-from-home-yes'},
-              {label: '😊¢ No, separate office', action: 'work-from-home-no'}
+              {label: '🏠 Yes, I work from home', action: 'work-from-home-yes'},
+              {label: '🏢 No, separate office', action: 'work-from-home-no'}
             ]);
           }, 1200);
         }, 500);
@@ -7549,7 +7621,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Perfect! That's actually really valuable to know. 😊 \n\nDo you ever host business meetings, client consultations, or team gatherings at your home?`);
+            addDrewMessage(`Perfect! That's actually really valuable to know. 🏠\n\nDo you ever host business meetings, client consultations, or team gatherings at your home?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: '✓ Yes, sometimes', action: 'meetings-at-home-yes'},
@@ -7571,8 +7643,8 @@
             addDrewMessage(`Got it! Having a dedicated business space is great for organization.\n\nDo you have any employees or contractors who help with your business?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊¥ Yes, I have help', action: 'has-employees'},
-              {label: '😊 Just me', action: 'solo-business'}
+              {label: '👥 Yes, I have help', action: 'has-employees'},
+              {label: '🙋 Just me', action: 'solo-business'}
             ]);
           }, 1200);
         }, 500);
@@ -7588,11 +7660,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`This is exciting! 😊 Based on what you've told me, you might qualify for a strategy called the <strong>Augusta Rule</strong>.\n\nIt lets you rent your home to your business for up to 14 days per year — completely tax-free to you personally, and a deductible expense for your business!`, true, true);
+            addDrewMessage(`This is exciting! 🎉 Based on what you've told me, you might qualify for a strategy called the <strong>Augusta Rule</strong>.\n\nIt lets you rent your home to your business for up to 14 days per year — completely tax-free to you personally, and a deductible expense for your business!`, true, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊® Tell me more!', action: 'augusta-more'},
-              {label: '😊 Upload docs to verify', action: 'upload-after-strategy'}
+              {label: '🤩 Tell me more!', action: 'augusta-more'},
+              {label: '📄 Upload docs to verify', action: 'upload-after-strategy'}
             ]);
           }, 1500);
         }, 500);
@@ -7612,10 +7684,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Thanks for sharing! I'm already seeing some potential opportunities for your situation. 😊¡\n\nTo find the exact strategies and calculate your potential savings, I'll need to take a quick look at your tax documents.\n\nReady to upload?`);
+            addDrewMessage(`Thanks for sharing! I'm already seeing some potential opportunities for your situation. 💡\n\nTo find the exact strategies and calculate your potential savings, I'll need to take a quick look at your tax documents.\n\nReady to upload?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊 Upload Documents', action: 'upload-docs'},
+              {label: '📄 Upload Documents', action: 'upload-docs'},
               {label: '📋 What docs do I need?', action: 'what-docs'}
             ]);
           }, 1200);
@@ -7632,10 +7704,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Here's how the Augusta Rule works:\n\n<strong>1.</strong> Your business pays YOU rent for using your home for meetings (at fair market rates)\n\n<strong>2.</strong> Up to 14 days/year, you don't report this income personally\n\n<strong>3.</strong> Your business deducts it as a legitimate expense\n\n<strong>Potential savings:</strong> $5,000-$15,000+ per year depending on your home value and meeting frequency.\n\nTo verify you qualify and calculate your exact savings, I just need to review your tax documents. 😊`, true);
+            addDrewMessage(`Here's how the Augusta Rule works:\n\n<strong>1.</strong> Your business pays YOU rent for using your home for meetings (at fair market rates)\n\n<strong>2.</strong> Up to 14 days/year, you don't report this income personally\n\n<strong>3.</strong> Your business deducts it as a legitimate expense\n\n<strong>Potential savings:</strong> $5,000-$15,000+ per year depending on your home value and meeting frequency.\n\nTo verify you qualify and calculate your exact savings, I just need to review your tax documents. 📊`, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊 Upload docs to verify', action: 'upload-after-strategy'},
+              {label: '📄 Upload docs to verify', action: 'upload-after-strategy'},
               {label: 'What docs do I need?', action: 'what-docs'}
             ]);
           }, 1800);
@@ -7666,10 +7738,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Great question! Here's what helps me find the best strategies for you:\n\n😊 <strong>Prior year tax return</strong> — Form 1040, 1120, or 1120-S\n\n😊 <strong>Schedule C</strong> — If you're self-employed\n\n😊 <strong>Business expense records</strong> — Receipts, statements\n\n😊 <strong>1099 forms</strong> — Any contractor income\n\nDon't worry if you don't have everything — upload what you have and we'll let you know if we need more!`, true);
+            addDrewMessage(`Great question! Here's what helps me find the best strategies for you:\n\n📄 <strong>Prior year tax return</strong> — Form 1040, 1120, or 1120-S\n\n📄 <strong>Schedule C</strong> — If you're self-employed\n\n📄 <strong>Business expense records</strong> — Receipts, statements\n\n📄 <strong>1099 forms</strong> — Any contractor income\n\nDon't worry if you don't have everything — upload what you have and we'll let you know if we need more!`, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊 Upload Documents', action: 'upload-docs'},
+              {label: '📄 Upload Documents', action: 'upload-docs'},
               {label: 'I have questions', action: 'have-questions'}
             ]);
           }, 1500);
@@ -7691,7 +7763,7 @@
             updateSuggestions([
               {label: 'How does analysis work?', action: 'how-analysis'},
               {label: 'Is my data secure?', action: 'data-secure'},
-              {label: '😊 Upload Documents', action: 'upload-docs'}
+              {label: '📄 Upload Documents', action: 'upload-docs'}
             ]);
           }, 1200);
         }, 500);
@@ -7710,7 +7782,7 @@
             addDrewMessage(`Here's how I find savings for you:\n\n<strong>1. You upload documents</strong>\nTax returns, expense records, etc.\n\n<strong>2. I analyze for opportunities</strong>\nI scan for deductions and strategies that match your situation.\n\n<strong>3. Expert review</strong>\nA tax professional verifies my findings for your specific case.\n\n<strong>4. You get recommendations</strong>\nPersonalized strategies with potential savings amounts.\n\nThe whole process typically takes 2-3 business days!`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊 Upload Documents', action: 'upload-docs'},
+              {label: '📄 Upload Documents', action: 'upload-docs'},
               {label: 'Is my data secure?', action: 'data-secure'}
             ]);
           }, 1500);
@@ -7727,10 +7799,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Absolutely! Your security is our top priority. 😊\n\n🔒 <strong>Bank-level encryption</strong> for all documents\n\n🔒 <strong>SOC 2 certified</strong> infrastructure\n\n🔒 <strong>Never sold or shared</strong> with third parties\n\n🔒 <strong>You control your data</strong> — delete anytime\n\nOnly you and your assigned tax professional can access your documents.`);
+            addDrewMessage(`Absolutely! Your security is our top priority. 🔒\n\n🔒 <strong>Bank-level encryption</strong> for all documents\n\n🔒 <strong>SOC 2 certified</strong> infrastructure\n\n🔒 <strong>Never sold or shared</strong> with third parties\n\n🔒 <strong>You control your data</strong> — delete anytime\n\nOnly you and your assigned tax professional can access your documents.`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: '😊 Upload Documents', action: 'upload-docs'},
+              {label: '📄 Upload Documents', action: 'upload-docs'},
               {label: 'More questions', action: 'have-questions'}
             ]);
           }, 1500);
@@ -7767,7 +7839,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Great! That opens up some good opportunities. 😊 \n\nDo you ever hold business meetings, team gatherings, or planning sessions at your home?`);
+            addDrewMessage(`Great! That opens up some good opportunities. 🏠\n\nDo you ever hold business meetings, team gatherings, or planning sessions at your home?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'Yes, occasionally', action: 'meetings-yes'},
@@ -7806,7 +7878,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Excellent! Based on your documents and what you've told me, I found a strategy that could be a great fit for you. 😊¯`, true, true);
+            addDrewMessage(`Excellent! Based on your documents and what you've told me, I found a strategy that could be a great fit for you. 📋`, true, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'View all strategies', action: 'view-all-strategies'},
@@ -7833,7 +7905,7 @@
           addDrewMessage(`Thanks for sharing! Let me help you with that.\n\nWould you like to upload your documents so I can find personalized strategies for you?`, true);
           chatSuggestions.style.opacity = '1';
           updateSuggestions([
-            {label: '😊 Upload Documents', action: 'upload-docs'},
+            {label: '📄 Upload Documents', action: 'upload-docs'},
             {label: 'I have questions', action: 'have-questions'}
           ]);
         }, 1200);
@@ -7953,7 +8025,7 @@
         // All tasks completed - show celebration
         container.innerHTML = `
           <div class="next-task-empty">
-            <div class="next-task-empty-icon">😊</div>
+            <div class="next-task-empty-icon">🎉</div>
             <div class="next-task-empty-text">All tasks completed! Great work!</div>
           </div>
         `;
