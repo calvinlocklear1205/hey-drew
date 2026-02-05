@@ -451,11 +451,22 @@
     /* ==================== */
     #token-screen {
       background: linear-gradient(180deg, #E8F7F5 0%, var(--white) 40%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .token-screen-content {
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
     }
 
     .token-hero {
       text-align: center;
-      padding: 30px 24px 40px;
+      padding: 0 0 40px;
     }
 
     .mascot-container {
@@ -565,7 +576,8 @@
     }
 
     .token-form {
-      padding: 0 24px;
+      padding: 0;
+      width: 100%;
     }
 
     .token-input-container {
@@ -609,7 +621,8 @@
     }
 
     .token-actions {
-      padding: 32px 24px;
+      padding: 32px 0;
+      width: 100%;
     }
 
     .token-error-banner {
@@ -5204,6 +5217,7 @@
       
       <!-- ACCESS TOKEN SCREEN -->
       <div id="token-screen" class="page active">
+        <div class="token-screen-content">
         <div class="token-hero">
           <div class="invite-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5253,6 +5267,7 @@
 
         <div class="provider-info">
           <p>Access provided by <strong>Aspire4More</strong></p>
+        </div>
         </div>
       </div>
 
