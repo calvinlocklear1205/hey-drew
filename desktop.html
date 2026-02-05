@@ -71,8 +71,23 @@
     }
 
     .app-container.onboarding .screen {
+      display: block;
       width: 100%;
       min-height: 100vh;
+    }
+
+    .app-container.onboarding .page {
+      display: none;
+    }
+
+    .app-container.onboarding .page.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 32px;
+      opacity: 1;
     }
 
     /* === SIDEBAR - Light/Cartoon Theme === */
@@ -305,20 +320,6 @@
 
     .onboarding-actions {
       margin-top: 32px;
-    }
-
-    .app-container.onboarding .page {
-      display: none;
-      padding: 32px;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .app-container.onboarding .page.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     /* Common Components */
