@@ -4823,7 +4823,7 @@
     }
 
     .task-checkbox.checked::after {
-      content: 'â';
+      content: '✓';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -5021,7 +5021,7 @@
     }
 
     .reminder-checkbox.checked::after {
-      content: 'â';
+      content: '✓';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -5048,7 +5048,7 @@
       margin-top: 12px;
     }
 
-    .calendar-sync-icon {
+              <span class="calendar-sync-icon">✓</span>
       font-size: 20px;
     }
 
@@ -5246,7 +5246,7 @@
 
         <div class="token-actions">
           <div class="token-error-banner" id="token-error">
-            <p>â ï¸ Invalid access token. Please check and try again.</p>
+            <p>⚠️ Invalid access token. Please check and try again.</p>
           </div>
           <button class="btn-primary" id="redeem-btn">Redeem Access</button>
         </div>
@@ -5561,14 +5561,14 @@
 
         <div class="welcome-section">
           <p class="welcome-greeting">Good morning,</p>
-          <h1 class="welcome-name">Sarah ð</h1>
+          <h1 class="welcome-name">Sarah 😊</h1>
         </div>
 
         <div class="case-card">
           <div class="case-card-header">
             <span class="case-year-badge">Tax Year 2024</span>
             <h2 class="case-business-name">Sarah's Bakery LLC</h2>
-            <p class="case-type">Small Business â¢ Retail</p>
+            <p class="case-type">Small Business • Retail</p>
           </div>
           <div class="case-card-body">
             <div class="case-card-drew-avatar">
@@ -5576,11 +5576,11 @@
             </div>
             <div class="case-card-body-content">
               <div class="drew-preview-message" style="background: #f5f5f5; border-radius: 16px; padding: 14px 18px; margin: 8px 0 20px 0;">
-                <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5;">Hey, it's Drew! ð Let's get to know your business a bit so I can find the best tax strategies for you.</p>
+                <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5;">Hey, it's Drew! 😊 Let's get to know your business a bit so I can find the best tax strategies for you.</p>
               </div>
             </div>
             <div class="case-actions">
-              <button class="btn-primary" onclick="showScreen('chat-screen')">ð¬ Chat with Drew</button>
+              <button class="btn-primary" onclick="showScreen('chat-screen')">😊¬ Chat with Drew</button>
             </div>
           </div>
         </div>
@@ -5588,7 +5588,7 @@
         <!-- Next Task Up Section -->
         <div class="next-task" id="dashboard-next-task">
           <div class="next-task-header">
-            <span class="next-task-icon">ð¯</span>
+            <span class="next-task-icon">😊¯</span>
             <h3 class="next-task-title">Next Task Up</h3>
           </div>
           <div id="next-task-container">
@@ -5679,7 +5679,7 @@
             </div>
             <div class="message-content">
               <div class="message-bubble drew">
-                <p>Hey there! ð I'm Drew, your tax strategy assistant.</p>
+                <p>Hey there! 😊 I'm Drew, your tax strategy assistant.</p>
                 <p>Before we dive in, I'd love to learn a bit about your business so I can find the best strategies for you.</p>
                 <p>What type of business do you run?</p>
               </div>
@@ -5689,9 +5689,9 @@
         </div>
 
         <div class="chat-suggestions" id="chat-suggestions">
-          <button class="suggestion-chip" data-response="biz-retail">ðª Retail / E-commerce</button>
-          <button class="suggestion-chip" data-response="biz-service">ð¼ Service Business</button>
-          <button class="suggestion-chip" data-response="biz-consulting">ð¯ Consulting</button>
+          <button class="suggestion-chip" data-response="biz-retail">😊ª Retail / E-commerce</button>
+          <button class="suggestion-chip" data-response="biz-service">😊¼ Service Business</button>
+          <button class="suggestion-chip" data-response="biz-consulting">😊¯ Consulting</button>
         </div>
 
         <div class="chat-input-area">
@@ -5817,7 +5817,7 @@
         <div class="strategy-tab-content" id="content-tasks">
           <div class="strategy-content">
             <div class="task-group">
-              <h3 class="task-group-header">â ï¸ OVERDUE</h3>
+              <h3 class="task-group-header">⚠️ OVERDUE</h3>
               <div class="task-item overdue" onclick="showTaskDetail(3)">
                 <div class="task-checkbox" onclick="event.stopPropagation(); toggleTask(3)"></div>
                 <div class="task-content">
@@ -5828,7 +5828,7 @@
             </div>
 
             <div class="task-group">
-              <h3 class="task-group-header">ð UPCOMING</h3>
+              <h3 class="task-group-header">😊 UPCOMING</h3>
               <div class="task-item" onclick="showTaskDetail(4)">
                 <div class="task-checkbox" onclick="event.stopPropagation(); toggleTask(4)"></div>
                 <div class="task-content">
@@ -5888,7 +5888,7 @@
             </div>
 
             <div class="task-group">
-              <h3 class="task-group-header">â COMPLETED</h3>
+              <h3 class="task-group-header">✅ COMPLETED</h3>
               <div class="task-item completed" onclick="showTaskDetail(1)">
                 <div class="task-checkbox checked" onclick="event.stopPropagation(); toggleTask(1)"></div>
                 <div class="task-content">
@@ -5913,28 +5913,28 @@
             <h3 style="margin-bottom:20px;">Required Documents</h3>
             <div class="document-list">
               <div class="document-item">
-                <div class="document-icon">ð</div>
+                <div class="document-icon">😊</div>
                 <div class="document-info">
                   <div class="document-name">Written Rental Agreement</div>
                   <div class="document-desc">Agreement between you and your business entity</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">ð</div>
+                <div class="document-icon">😊</div>
                 <div class="document-info">
                   <div class="document-name">Meeting Minutes Template</div>
                   <div class="document-desc">Documentation of business meetings held at home</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">ðµ</div>
+                <div class="document-icon">😊µ</div>
                 <div class="document-info">
                   <div class="document-name">Invoice Templates</div>
                   <div class="document-desc">Quarterly invoices for rental fees</div>
                 </div>
               </div>
               <div class="document-item">
-                <div class="document-icon">ð </div>
+                <div class="document-icon">😊 </div>
                 <div class="document-info">
                   <div class="document-name">Comparable Rental Rates</div>
                   <div class="document-desc">Market research for fair rental value</div>
@@ -5957,11 +5957,11 @@
       </div>
 
       <!-- TASK DETAIL MODAL -->
-      <div class="task-detail-modal" id="task-modal" onclick="if(event.target === this) closeTaskModal()">
+            <button class="task-detail-close" onclick="closeTaskModal()">×</button>
         <div class="task-detail-sheet">
           <div class="task-detail-header">
             <h3 id="modal-task-title" style="font-size:18px;font-weight:700;margin:0;">Task Details</h3>
-            <button class="task-detail-close" onclick="closeTaskModal()">â</button>
+            <button class="task-detail-close" onclick="closeTaskModal()">×</button>
           </div>
           <div class="task-detail-body">
             <div class="task-detail-card">
@@ -5999,7 +5999,7 @@
               </div>
             </div>
             <div class="calendar-sync">
-              <span class="calendar-sync-icon">â</span>
+              <span class="calendar-sync-icon">✓</span>
               <span class="calendar-sync-text">Synced to Google Calendar</span>
             </div>
           </div>
@@ -6332,9 +6332,9 @@
               <span>SA</span>
             </div>
             <div class="thread-message-content">
-              <div class="thread-message-sender">Sarah Chen <span>â¢ Tax Specialist</span></div>
+              <div class="thread-message-sender">Sarah Chen <span>• Tax Specialist</span></div>
               <div class="thread-message-bubble">
-                <p>Hi there! ð</p>
+                <p>Hi there! 😊</p>
                 <p>We're reviewing your uploaded documents and noticed that your submission is missing a <strong>Schedule C (Form 1040)</strong> for your business income.</p>
                 <p>This form is essential for us to analyze your self-employment deductions and identify potential savings strategies.</p>
               </div>
@@ -6404,7 +6404,7 @@
               <span>SA</span>
             </div>
             <div class="thread-message-content">
-              <div class="thread-message-sender">Michael Torres <span>â¢ Document Specialist</span></div>
+              <div class="thread-message-sender">Michael Torres <span>• Document Specialist</span></div>
               <div class="thread-message-bubble">
                 <p>Hi!</p>
                 <p>We tried opening the file <strong>"Business_Expenses_2024.pdf"</strong> but it appears to be corrupted or password-protected.</p>
@@ -6429,7 +6429,7 @@
             </div>
             <div class="thread-message-content">
               <div class="thread-message-bubble">
-                <p>Perfect, thank you! We received the new file and can open it now. â</p>
+                <p>Perfect, thank you! We received the new file and can open it now. ✅</p>
                 <p>We'll continue reviewing your documents and reach out if we need anything else.</p>
               </div>
               <div class="thread-message-time">4:30 PM</div>
@@ -6484,7 +6484,7 @@
             <div class="thread-message-content">
               <div class="thread-message-sender">HeyDrew System</div>
               <div class="thread-message-bubble system">
-                <p>ð <strong>Welcome to HeyDrew!</strong></p>
+                <p>😊 <strong>Welcome to HeyDrew!</strong></p>
                 <p>Your account has been created and your tax case for 2024 is ready.</p>
                 <p><strong>Here's what happens next:</strong></p>
                 <ol>
@@ -6895,7 +6895,7 @@
               <div class="timeline-content">
                 <p class="timeline-item-title">Documents Uploaded</p>
                 <p class="timeline-item-desc">All required files received</p>
-                <p class="timeline-item-time">Jan 28, 2026 â¢ 10:32 AM</p>
+                <p class="timeline-item-time">Jan 28, 2026 • 10:32 AM</p>
               </div>
             </div>
 
@@ -6948,17 +6948,17 @@
   </div>
 
   <div class="nav-hint">
-    <button class="reset-btn" onclick="resetPrototype()">âº Reset</button>
-    <button class="reset-btn" onclick="toggleScreenNav()" style="background: var(--purple-primary);">â° Screens</button>
-    <a href="./admin.html" target="_blank" class="reset-btn" style="background: #FF9F43; text-decoration: none; display: inline-flex; align-items: center;">View Admin â</a>
-    <span>â â to page â¢ S for screens</span>
+    <button class="reset-btn" onclick="resetPrototype()">Reset</button>
+    <button class="reset-btn" onclick="toggleScreenNav()" style="background: var(--purple-primary);">Screens</button>
+    <a href="./admin.html" target="_blank" class="reset-btn" style="background: #FF9F43; text-decoration: none; display: inline-flex; align-items: center;">View Admin</a>
+    <span>Arrow keys to navigate | S for screens</span>
   </div>
 
   <!-- Screen Navigator Panel -->
   <div class="screen-nav-panel" id="screen-nav-panel">
     <div class="screen-nav-header">
       <h3>Jump to Screen</h3>
-      <button class="screen-nav-close" onclick="toggleScreenNav()">â¢</button>
+      <button class="screen-nav-close" onclick="toggleScreenNav()">•</button>
     </div>
     <div class="screen-nav-list">
       <div class="screen-nav-group">
@@ -7193,7 +7193,7 @@
       
       // Also update the case home screen
       document.querySelector('.case-business-name').textContent = businessName;
-      document.querySelector('.welcome-name').textContent = firstName + ' ð';
+      document.querySelector('.welcome-name').textContent = firstName + ' 😊';
       document.querySelector('.case-year-badge').textContent = 'Tax Year ' + selectedYear;
       
       // Update settings screen with user name
@@ -7476,7 +7476,7 @@
               </div>
             </div>
             <div class="strategy-card-body">
-              <p>Rent your home to your business for up to 14 days per year â tax free! Perfect for business meetings and planning sessions.</p>
+              <p>Rent your home to your business for up to 14 days per year — tax free! Perfect for business meetings and planning sessions.</p>
               <div class="strategy-card-cta">
                 <span>Learn more</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -7529,11 +7529,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`${bizTypes[response]} â great! ð¯\n\nThat opens up some interesting tax strategy opportunities.\n\nQuick question: Do you work from home or use part of your home for business?`);
+            addDrewMessage(`${bizTypes[response]} — great! 😊¯\n\nThat opens up some interesting tax strategy opportunities.\n\nQuick question: Do you work from home or use part of your home for business?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð  Yes, I work from home', action: 'work-from-home-yes'},
-              {label: 'ð¢ No, separate office', action: 'work-from-home-no'}
+              {label: '😊  Yes, I work from home', action: 'work-from-home-yes'},
+              {label: '😊¢ No, separate office', action: 'work-from-home-no'}
             ]);
           }, 1200);
         }, 500);
@@ -7549,11 +7549,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Perfect! That's actually really valuable to know. ð \n\nDo you ever host business meetings, client consultations, or team gatherings at your home?`);
+            addDrewMessage(`Perfect! That's actually really valuable to know. 😊 \n\nDo you ever host business meetings, client consultations, or team gatherings at your home?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'â Yes, sometimes', action: 'meetings-at-home-yes'},
-              {label: 'â No, not really', action: 'meetings-at-home-no'}
+              {label: '✓ Yes, sometimes', action: 'meetings-at-home-yes'},
+              {label: '✗ No, not really', action: 'meetings-at-home-no'}
             ]);
           }, 1200);
         }, 500);
@@ -7571,8 +7571,8 @@
             addDrewMessage(`Got it! Having a dedicated business space is great for organization.\n\nDo you have any employees or contractors who help with your business?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð¥ Yes, I have help', action: 'has-employees'},
-              {label: 'ð Just me', action: 'solo-business'}
+              {label: '😊¥ Yes, I have help', action: 'has-employees'},
+              {label: '😊 Just me', action: 'solo-business'}
             ]);
           }, 1200);
         }, 500);
@@ -7588,11 +7588,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`This is exciting! ð Based on what you've told me, you might qualify for a strategy called the <strong>Augusta Rule</strong>.\n\nIt lets you rent your home to your business for up to 14 days per year â completely tax-free to you personally, and a deductible expense for your business!`, true, true);
+            addDrewMessage(`This is exciting! 😊 Based on what you've told me, you might qualify for a strategy called the <strong>Augusta Rule</strong>.\n\nIt lets you rent your home to your business for up to 14 days per year — completely tax-free to you personally, and a deductible expense for your business!`, true, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð® Tell me more!', action: 'augusta-more'},
-              {label: 'ð Upload docs to verify', action: 'upload-after-strategy'}
+              {label: '😊® Tell me more!', action: 'augusta-more'},
+              {label: '😊 Upload docs to verify', action: 'upload-after-strategy'}
             ]);
           }, 1500);
         }, 500);
@@ -7612,11 +7612,11 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Thanks for sharing! I'm already seeing some potential opportunities for your situation. ð¡\n\nTo find the exact strategies and calculate your potential savings, I'll need to take a quick look at your tax documents.\n\nReady to upload?`);
+            addDrewMessage(`Thanks for sharing! I'm already seeing some potential opportunities for your situation. 😊¡\n\nTo find the exact strategies and calculate your potential savings, I'll need to take a quick look at your tax documents.\n\nReady to upload?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð Upload Documents', action: 'upload-docs'},
-              {label: 'â What docs do I need?', action: 'what-docs'}
+              {label: '😊 Upload Documents', action: 'upload-docs'},
+              {label: '📋 What docs do I need?', action: 'what-docs'}
             ]);
           }, 1200);
         }, 500);
@@ -7632,10 +7632,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Here's how the Augusta Rule works:\n\n<strong>1.</strong> Your business pays YOU rent for using your home for meetings (at fair market rates)\n\n<strong>2.</strong> Up to 14 days/year, you don't report this income personally\n\n<strong>3.</strong> Your business deducts it as a legitimate expense\n\n<strong>Potential savings:</strong> $5,000-$15,000+ per year depending on your home value and meeting frequency.\n\nTo verify you qualify and calculate your exact savings, I just need to review your tax documents. ð`, true);
+            addDrewMessage(`Here's how the Augusta Rule works:\n\n<strong>1.</strong> Your business pays YOU rent for using your home for meetings (at fair market rates)\n\n<strong>2.</strong> Up to 14 days/year, you don't report this income personally\n\n<strong>3.</strong> Your business deducts it as a legitimate expense\n\n<strong>Potential savings:</strong> $5,000-$15,000+ per year depending on your home value and meeting frequency.\n\nTo verify you qualify and calculate your exact savings, I just need to review your tax documents. 😊`, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð Upload docs to verify', action: 'upload-after-strategy'},
+              {label: '😊 Upload docs to verify', action: 'upload-after-strategy'},
               {label: 'What docs do I need?', action: 'what-docs'}
             ]);
           }, 1800);
@@ -7666,10 +7666,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Great question! Here's what helps me find the best strategies for you:\n\nð <strong>Prior year tax return</strong> â Form 1040, 1120, or 1120-S\n\nð <strong>Schedule C</strong> â If you're self-employed\n\nð <strong>Business expense records</strong> â Receipts, statements\n\nð <strong>1099 forms</strong> â Any contractor income\n\nDon't worry if you don't have everything â upload what you have and we'll let you know if we need more!`, true);
+            addDrewMessage(`Great question! Here's what helps me find the best strategies for you:\n\n😊 <strong>Prior year tax return</strong> — Form 1040, 1120, or 1120-S\n\n😊 <strong>Schedule C</strong> — If you're self-employed\n\n😊 <strong>Business expense records</strong> — Receipts, statements\n\n😊 <strong>1099 forms</strong> — Any contractor income\n\nDon't worry if you don't have everything — upload what you have and we'll let you know if we need more!`, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð Upload Documents', action: 'upload-docs'},
+              {label: '😊 Upload Documents', action: 'upload-docs'},
               {label: 'I have questions', action: 'have-questions'}
             ]);
           }, 1500);
@@ -7686,12 +7686,12 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Of course! I'm happy to help. What would you like to know?\n\nYou can ask me about:\nâ¢ What tax strategies might apply to your business\nâ¢ How the document analysis works\nâ¢ Privacy and security of your data\nâ¢ Anything else!`);
+            addDrewMessage(`Of course! I'm happy to help. What would you like to know?\n\nYou can ask me about:\n• What tax strategies might apply to your business\n• How the document analysis works\n• Privacy and security of your data\n• Anything else!`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'How does analysis work?', action: 'how-analysis'},
               {label: 'Is my data secure?', action: 'data-secure'},
-              {label: 'ð Upload Documents', action: 'upload-docs'}
+              {label: '😊 Upload Documents', action: 'upload-docs'}
             ]);
           }, 1200);
         }, 500);
@@ -7710,7 +7710,7 @@
             addDrewMessage(`Here's how I find savings for you:\n\n<strong>1. You upload documents</strong>\nTax returns, expense records, etc.\n\n<strong>2. I analyze for opportunities</strong>\nI scan for deductions and strategies that match your situation.\n\n<strong>3. Expert review</strong>\nA tax professional verifies my findings for your specific case.\n\n<strong>4. You get recommendations</strong>\nPersonalized strategies with potential savings amounts.\n\nThe whole process typically takes 2-3 business days!`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð Upload Documents', action: 'upload-docs'},
+              {label: '😊 Upload Documents', action: 'upload-docs'},
               {label: 'Is my data secure?', action: 'data-secure'}
             ]);
           }, 1500);
@@ -7727,10 +7727,10 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Absolutely! Your security is our top priority. ð\n\nâ <strong>Bank-level encryption</strong> for all documents\n\nâ <strong>SOC 2 certified</strong> infrastructure\n\nâ <strong>Never sold or shared</strong> with third parties\n\nâ <strong>You control your data</strong> â delete anytime\n\nOnly you and your assigned tax professional can access your documents.`);
+            addDrewMessage(`Absolutely! Your security is our top priority. 😊\n\n🔒 <strong>Bank-level encryption</strong> for all documents\n\n🔒 <strong>SOC 2 certified</strong> infrastructure\n\n🔒 <strong>Never sold or shared</strong> with third parties\n\n🔒 <strong>You control your data</strong> — delete anytime\n\nOnly you and your assigned tax professional can access your documents.`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
-              {label: 'ð Upload Documents', action: 'upload-docs'},
+              {label: '😊 Upload Documents', action: 'upload-docs'},
               {label: 'More questions', action: 'have-questions'}
             ]);
           }, 1500);
@@ -7747,7 +7747,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Perfect! I've received your documents. ðâ\n\nNow let me ask a few quick questions to better understand your situation and find the best strategies for you.\n\nDo you own your home?`);
+            addDrewMessage(`Perfect! I've received your documents. 📄\n\nNow let me ask a few quick questions to better understand your situation and find the best strategies for you.\n\nDo you own your home?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'Yes, I own my home', action: 'own-home-yes'},
@@ -7767,7 +7767,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Great! That opens up some good opportunities. ð \n\nDo you ever hold business meetings, team gatherings, or planning sessions at your home?`);
+            addDrewMessage(`Great! That opens up some good opportunities. 😊 \n\nDo you ever hold business meetings, team gatherings, or planning sessions at your home?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'Yes, occasionally', action: 'meetings-yes'},
@@ -7787,7 +7787,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`No problem! There are still plenty of strategies we can explore.\n\nDo you have any employees â even part-time or family members who help with the business?`);
+            addDrewMessage(`No problem! There are still plenty of strategies we can explore.\n\nDo you have any employees — even part-time or family members who help with the business?`);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'Yes, I have employees', action: 'has-employees'},
@@ -7806,7 +7806,7 @@
           showTypingIndicator();
           setTimeout(() => {
             removeTypingIndicator();
-            addDrewMessage(`Excellent! Based on your documents and what you've told me, I found a strategy that could be a great fit for you. ð¯`, true, true);
+            addDrewMessage(`Excellent! Based on your documents and what you've told me, I found a strategy that could be a great fit for you. 😊¯`, true, true);
             chatSuggestions.style.opacity = '1';
             updateSuggestions([
               {label: 'View all strategies', action: 'view-all-strategies'},
@@ -7833,7 +7833,7 @@
           addDrewMessage(`Thanks for sharing! Let me help you with that.\n\nWould you like to upload your documents so I can find personalized strategies for you?`, true);
           chatSuggestions.style.opacity = '1';
           updateSuggestions([
-            {label: 'ð Upload Documents', action: 'upload-docs'},
+            {label: '😊 Upload Documents', action: 'upload-docs'},
             {label: 'I have questions', action: 'have-questions'}
           ]);
         }, 1200);
@@ -7906,7 +7906,7 @@
       document.getElementById('task-modal').classList.add('active');
     }
 
-    function closeTaskModal() {
+            <button class="task-detail-close" onclick="closeTaskModal()">×</button>
       document.getElementById('task-modal').classList.remove('active');
     }
 
@@ -7953,7 +7953,7 @@
         // All tasks completed - show celebration
         container.innerHTML = `
           <div class="next-task-empty">
-            <div class="next-task-empty-icon">ð</div>
+            <div class="next-task-empty-icon">😊</div>
             <div class="next-task-empty-text">All tasks completed! Great work!</div>
           </div>
         `;
