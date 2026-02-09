@@ -6472,7 +6472,7 @@
             </div>
             <div class="timeline-step active">
               <div class="timeline-dot">2</div>
-              <div class="timeline-label">Pending</div>
+              <div class="timeline-label">In Review</div>
               <div class="timeline-connector"></div>
             </div>
             <div class="timeline-step">
@@ -9154,7 +9154,7 @@
         name: '1099-DIV (Dividends)',
         icon: '\u{1F4C8}',
         status: 'received',
-        snippet: 'Processing...',
+        snippet: 'Your tax professional is reviewing',
         fields: []
       },
       {
@@ -9170,7 +9170,7 @@
         name: '1098 (Mortgage Interest)',
         icon: '\u{1F3E1}',
         status: 'received',
-        snippet: 'Processing...',
+        snippet: 'Your tax professional is reviewing',
         fields: []
       },
       {
@@ -9224,7 +9224,7 @@
 
       let html = '';
       docsToShow.forEach((doc, idx) => {
-        const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'Pending' : 'Missing';
+        const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'In Review' : 'Missing';
         html += `
           <div class="tax-prep-doc-item" onclick="openTaxDocDetail('${doc.id}')">
             <div class="tax-prep-doc-icon">${doc.icon}</div>
@@ -9277,7 +9277,7 @@
       document.getElementById('tax-doc-modal-title').textContent = doc.name;
 
       const statusEl = document.getElementById('tax-doc-modal-status');
-      const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'Pending' : 'Missing';
+      const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'In Review' : 'Missing';
       statusEl.textContent = statusLabel;
       statusEl.className = 'doc-status ' + doc.status;
 
