@@ -947,6 +947,626 @@
       font-weight: 500;
     }
 
+    /* ==================== TAX PREP HUB ==================== */
+
+    .tax-prep-section {
+      background: linear-gradient(135deg, var(--gold-light) 0%, #FFF9F0 60%, var(--white) 100%);
+      border-radius: var(--radius-lg);
+      margin: 0 16px 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .tax-prep-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .tax-prep-header-icon {
+      font-size: 24px;
+    }
+
+    .tax-prep-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 0;
+      flex: 1;
+    }
+
+    .tax-prep-year-badge {
+      background: var(--gold-primary);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    /* Progress bar */
+    .tax-prep-progress {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 16px;
+    }
+
+    .tax-prep-progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .tax-prep-progress-label span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .tax-prep-progress-label .progress-detail {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-500);
+    }
+
+    .tax-prep-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .tax-prep-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+      border-radius: var(--radius-full);
+      transition: width 0.6s ease;
+    }
+
+    /* Timeline */
+    .tax-prep-timeline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 0 4px;
+    }
+
+    .tax-prep-timeline .timeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tax-prep-timeline .timeline-step .timeline-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      position: relative;
+      left: auto;
+      top: auto;
+      z-index: 2;
+    }
+
+    .tax-prep-timeline .timeline-step.completed .timeline-dot {
+      background: var(--teal-primary);
+    }
+
+    .tax-prep-timeline .timeline-step.active .timeline-dot {
+      background: var(--gold-primary);
+      box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.25);
+      animation: timelinePulse 2s infinite;
+    }
+
+    @keyframes timelinePulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.25); }
+      50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0.1); }
+    }
+
+    .tax-prep-timeline .timeline-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .tax-prep-timeline .timeline-step.completed .timeline-label {
+      color: var(--teal-dark);
+    }
+
+    .tax-prep-timeline .timeline-step.active .timeline-label {
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    .tax-prep-timeline .timeline-connector {
+      position: absolute;
+      top: 14px;
+      left: calc(50% + 14px);
+      right: calc(-50% + 14px);
+      height: 3px;
+      background: var(--gray-300);
+      z-index: 0;
+    }
+
+    .tax-prep-timeline .timeline-step.completed .timeline-connector {
+      background: var(--teal-primary);
+    }
+
+    /* Docs list */
+    .tax-prep-docs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .tax-prep-docs-header h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 0;
+    }
+
+    .tax-prep-view-all {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .tax-prep-view-all:hover {
+      color: var(--gold-dark);
+    }
+
+    .tax-prep-doc-item {
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .tax-prep-doc-item:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .tax-prep-doc-icon {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .tax-prep-doc-info {
+      min-width: 0;
+    }
+
+    .tax-prep-doc-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tax-prep-doc-snippet {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 1px;
+    }
+
+    .tax-prep-more-link {
+      text-align: center;
+      padding: 8px;
+    }
+
+    .tax-prep-more-link button {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tax-prep-more-link button:hover {
+      color: var(--gold-dark);
+    }
+
+    /* Tax summary card */
+    .tax-summary-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      margin-top: 16px;
+      overflow: hidden;
+    }
+
+    .tax-summary-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .tax-summary-header span {
+      font-size: 16px;
+    }
+
+    .tax-summary-header h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 0;
+    }
+
+    .tax-summary-body {
+      padding: 12px 16px;
+    }
+
+    .tax-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+
+    .tax-summary-row .label {
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    .tax-summary-row .value {
+      font-weight: 700;
+      color: var(--gray-800);
+    }
+
+    .tax-summary-row.deduction .value {
+      color: var(--teal-dark);
+    }
+
+    .tax-summary-row.total {
+      border-top: 2px solid var(--gray-200);
+      margin-top: 4px;
+      padding-top: 12px;
+    }
+
+    .tax-summary-row.total .label {
+      font-weight: 700;
+      color: var(--gray-800);
+    }
+
+    .tax-summary-divider {
+      border: none;
+      border-top: 1px dashed var(--gray-300);
+      margin: 4px 0;
+    }
+
+    /* Strategy row */
+    .strategy-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      margin: 4px -12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .strategy-row:hover {
+      background: var(--gold-light);
+    }
+
+    .strategy-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .strategy-row .label {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold-dark);
+    }
+
+    .strategy-row .value {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+
+    .strategy-row .arrow {
+      color: var(--gray-400);
+      font-size: 14px;
+    }
+
+    /* Savings highlight */
+    .savings-highlight {
+      background: linear-gradient(135deg, #E8FFE8 0%, #F0FFF0 100%);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .savings-highlight .label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2E7D32;
+    }
+
+    .savings-highlight .value {
+      font-size: 16px;
+      font-weight: 800;
+      color: #2E7D32;
+    }
+
+    /* Doc status badge variants */
+    .doc-status.parsed {
+      background: #E8FFE8;
+      color: #4CAF50;
+    }
+
+    .doc-status.received {
+      background: #E3F2FD;
+      color: #1976D2;
+    }
+
+    /* ==================== TAX DOC DETAIL MODAL ==================== */
+
+    .tax-doc-modal {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .tax-doc-modal.active {
+      display: flex;
+    }
+
+    .tax-doc-sheet {
+      width: 100%;
+      max-height: 80%;
+      background: var(--white);
+      border-radius: 24px 24px 0 0;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease;
+    }
+
+    .tax-doc-modal-header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      padding: 20px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .tax-doc-modal-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tax-doc-modal-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tax-doc-modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tax-doc-modal-body {
+      padding: 20px;
+    }
+
+    .parsed-field-section {
+      margin-bottom: 16px;
+    }
+
+    .parsed-field-section h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 8px;
+    }
+
+    .parsed-field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .parsed-field:last-child {
+      border-bottom: none;
+    }
+
+    .parsed-field .field-label {
+      font-size: 13px;
+      color: var(--gray-600);
+    }
+
+    .parsed-field .field-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+
+    .tax-doc-processing {
+      text-align: center;
+      padding: 32px 16px;
+    }
+
+    .tax-doc-processing .processing-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .tax-doc-processing h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 0 0 8px;
+    }
+
+    .tax-doc-processing p {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin: 0 0 16px;
+    }
+
+    .tax-doc-processing .processing-bar {
+      width: 200px;
+      height: 6px;
+      background: var(--gray-200);
+      border-radius: var(--radius-full);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .tax-doc-processing .processing-fill {
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, #1976D2, #42A5F5);
+      border-radius: var(--radius-full);
+      animation: processingSlide 2s ease-in-out infinite;
+    }
+
+    @keyframes processingSlide {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(250%); }
+    }
+
+    .tax-doc-missing {
+      text-align: center;
+      padding: 32px 16px;
+    }
+
+    .tax-doc-missing .missing-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .tax-doc-missing h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 0 0 8px;
+    }
+
+    .tax-doc-missing p {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin: 0 0 16px;
+    }
+
+    .tax-doc-missing .upload-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold-primary);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .tax-doc-modal-actions {
+      padding: 16px 20px;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      gap: 10px;
+    }
+
+    .tax-doc-modal-actions button {
+      flex: 1;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .tax-doc-modal-actions .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+
+    .tax-doc-modal-actions .btn-primary {
+      background: var(--gold-primary);
+      color: var(--white);
+    }
+
     .quick-actions {
       padding: 24px;
     }
@@ -2418,6 +3038,7 @@
 
     .uploaded-file-info {
       flex: 1;
+      min-width: 0;
     }
 
     .uploaded-file-name {
@@ -2425,6 +3046,9 @@
       font-weight: 700;
       color: var(--gray-800);
       margin-bottom: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .uploaded-file-size {
@@ -5822,6 +6446,116 @@
           </div>
         </div>
 
+        <!-- Tax Preparation Hub Section -->
+        <div class="tax-prep-section">
+          <div class="tax-prep-header">
+            <span class="tax-prep-header-icon">&#x1f4c1;</span>
+            <h3>Tax Preparation</h3>
+            <span class="tax-prep-year-badge">2024</span>
+          </div>
+
+          <div class="tax-prep-progress" id="tax-prep-progress">
+            <div class="tax-prep-progress-label">
+              <span>Tax Prep: <span id="tax-prep-pct">80</span>% complete</span>
+              <span class="progress-detail"><span id="tax-prep-count">8</span> of 10 docs</span>
+            </div>
+            <div class="tax-prep-progress-bar">
+              <div class="tax-prep-progress-fill" id="tax-prep-fill" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div class="tax-prep-timeline">
+            <div class="timeline-step completed">
+              <div class="timeline-dot">&#x2713;</div>
+              <div class="timeline-label">Docs<br>Received</div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-step active">
+              <div class="timeline-dot">2</div>
+              <div class="timeline-label">Processing</div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot">3</div>
+              <div class="timeline-label">Review</div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot">4</div>
+              <div class="timeline-label">Filing</div>
+            </div>
+          </div>
+
+          <div class="tax-prep-docs-header">
+            <h4>Source Documents</h4>
+            <button class="tax-prep-view-all" id="tax-prep-view-all" onclick="toggleAllTaxDocs()">View All</button>
+          </div>
+          <div id="tax-prep-docs-list">
+            <!-- Rendered by JavaScript -->
+          </div>
+
+          <div class="tax-summary-card">
+            <div class="tax-summary-header">
+              <span>&#x1f4ca;</span>
+              <h4>Tax Summary (Draft)</h4>
+            </div>
+            <div class="tax-summary-body">
+              <div class="tax-summary-row">
+                <span class="label">Total Income</span>
+                <span class="value">$187,450</span>
+              </div>
+              <div class="tax-summary-row deduction">
+                <span class="label">Business Expenses</span>
+                <span class="value">-$52,300</span>
+              </div>
+              <div class="tax-summary-row deduction">
+                <span class="label">Standard Deductions</span>
+                <span class="value">-$29,200</span>
+              </div>
+              <hr class="tax-summary-divider">
+              <div class="strategy-row" onclick="showScreen('strategy-detail-screen')">
+                <div class="strategy-dot"></div>
+                <span class="label">Augusta Rule</span>
+                <span class="value">-$28,000</span>
+                <span class="arrow">&#x203A;</span>
+              </div>
+              <hr class="tax-summary-divider">
+              <div class="tax-summary-row total">
+                <span class="label">Taxable Income</span>
+                <span class="value">$77,950</span>
+              </div>
+              <div class="tax-summary-row total">
+                <span class="label">Estimated Tax</span>
+                <span class="value">$12,588</span>
+              </div>
+              <div class="savings-highlight">
+                <span class="label">&#x1f7e2; Strategy Savings</span>
+                <span class="value">$6,720 saved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax Doc Detail Modal -->
+        <div class="tax-doc-modal" id="tax-doc-modal" onclick="if(event.target === this) closeTaxDocModal()">
+          <div class="tax-doc-sheet">
+            <div class="tax-doc-modal-header">
+              <div class="tax-doc-modal-header-left">
+                <h3 id="tax-doc-modal-title">Document</h3>
+                <span class="doc-status" id="tax-doc-modal-status"></span>
+              </div>
+              <button class="tax-doc-modal-close" onclick="closeTaxDocModal()">&#x2715;</button>
+            </div>
+            <div class="tax-doc-modal-body" id="tax-doc-modal-body">
+              <!-- Populated by JS -->
+            </div>
+            <div class="tax-doc-modal-actions">
+              <button class="btn-secondary" onclick="closeTaxDocModal()">Close</button>
+              <button class="btn-primary" id="tax-doc-modal-primary" onclick="closeTaxDocModal()">View Full Document</button>
+            </div>
+          </div>
+        </div>
+
         <div class="quick-actions">
           <h3 class="quick-actions-title">Quick Actions</h3>
           <div class="quick-action-grid">
@@ -7685,11 +8419,9 @@
         showScreen('analyzing-screen');
       }, 3000);
 
-      // Move to chat with docs uploaded confirmation
+      // Move to case home so user sees tax docs processing
       setTimeout(() => {
-        showScreen('chat-screen');
-        // Trigger the docs uploaded response in chat
-        handleUserResponse('docs-uploaded');
+        showScreen('case-home-screen');
       }, 7000);
     }
 
@@ -8311,6 +9043,301 @@
       checkbox.classList.toggle('checked');
     }
 
+    // ==================== TAX PREP HUB FUNCTIONALITY ====================
+
+    const taxPrepDocs = [
+      {
+        id: 'form-1040',
+        name: 'Form 1040 (Personal Return)',
+        icon: '\u{1F4CB}',
+        status: 'parsed',
+        snippet: 'AGI: $187,450',
+        fields: [
+          { section: 'Filing Info', items: [
+            { label: 'Filing Status', value: 'Married Filing Jointly' },
+            { label: 'Tax Year', value: '2024' }
+          ]},
+          { section: 'Income', items: [
+            { label: 'Wages (Line 1)', value: '$68,200' },
+            { label: 'Business Income (Line 12)', value: '$94,250' },
+            { label: 'Other Income', value: '$25,000' },
+            { label: 'Total Income (Line 9)', value: '$187,450' }
+          ]},
+          { section: 'Tax & Payments', items: [
+            { label: 'Taxable Income', value: '$77,950' },
+            { label: 'Total Tax', value: '$12,588' },
+            { label: 'Estimated Refund', value: '$3,412' }
+          ]}
+        ]
+      },
+      {
+        id: 'schedule-c',
+        name: 'Schedule C (Business P&L)',
+        icon: '\u{1F4CA}',
+        status: 'parsed',
+        snippet: 'Net: $94,250',
+        fields: [
+          { section: 'Business', items: [
+            { label: 'Business Name', value: 'Smith Consulting LLC' },
+            { label: 'Principal Activity', value: 'Management Consulting' }
+          ]},
+          { section: 'Income & Expenses', items: [
+            { label: 'Gross Receipts', value: '$146,550' },
+            { label: 'Cost of Goods', value: '$0' },
+            { label: 'Total Expenses', value: '$52,300' },
+            { label: 'Net Profit', value: '$94,250' }
+          ]},
+          { section: 'Expense Breakdown', items: [
+            { label: 'Advertising', value: '$4,200' },
+            { label: 'Car/Truck Expenses', value: '$8,100' },
+            { label: 'Insurance', value: '$6,800' },
+            { label: 'Office Expense', value: '$3,400' },
+            { label: 'Rent/Lease', value: '$18,000' },
+            { label: 'Utilities', value: '$2,400' },
+            { label: 'Other', value: '$9,400' }
+          ]}
+        ]
+      },
+      {
+        id: 'w2',
+        name: 'W-2 (Employer Wages)',
+        icon: '\u{1F4BC}',
+        status: 'parsed',
+        snippet: 'Wages: $68,200',
+        fields: [
+          { section: 'Employer', items: [
+            { label: 'Employer', value: 'Acme Corp' },
+            { label: 'EIN', value: '**-***4521' }
+          ]},
+          { section: 'Compensation', items: [
+            { label: 'Wages, Tips, Other', value: '$68,200' },
+            { label: 'Federal Tax Withheld', value: '$11,800' },
+            { label: 'Social Security Wages', value: '$68,200' },
+            { label: 'State Tax Withheld', value: '$4,200' }
+          ]}
+        ]
+      },
+      {
+        id: '1099-nec',
+        name: '1099-NEC (Contractor Income)',
+        icon: '\u{1F4C4}',
+        status: 'parsed',
+        snippet: '$20,000 reported',
+        fields: [
+          { section: 'Payer', items: [
+            { label: 'Payer', value: 'TechStart Inc.' },
+            { label: 'Payer TIN', value: '**-***8832' }
+          ]},
+          { section: 'Income', items: [
+            { label: 'Non-Employee Compensation', value: '$20,000' }
+          ]}
+        ]
+      },
+      {
+        id: '1099-int',
+        name: '1099-INT (Interest Income)',
+        icon: '\u{1F3E6}',
+        status: 'parsed',
+        snippet: 'Interest: $1,850',
+        fields: [
+          { section: 'Institution', items: [
+            { label: 'Bank', value: 'First National Bank' }
+          ]},
+          { section: 'Income', items: [
+            { label: 'Interest Income', value: '$1,850' },
+            { label: 'Early Withdrawal Penalty', value: '$0' }
+          ]}
+        ]
+      },
+      {
+        id: '1099-div',
+        name: '1099-DIV (Dividends)',
+        icon: '\u{1F4C8}',
+        status: 'received',
+        snippet: 'Processing...',
+        fields: []
+      },
+      {
+        id: 'schedule-e',
+        name: 'Schedule E (Rental Income)',
+        icon: '\u{1F3E0}',
+        status: 'missing',
+        snippet: 'Not yet uploaded',
+        fields: []
+      },
+      {
+        id: '1098',
+        name: '1098 (Mortgage Interest)',
+        icon: '\u{1F3E1}',
+        status: 'received',
+        snippet: 'Processing...',
+        fields: []
+      },
+      {
+        id: '1040-es',
+        name: '1040-ES (Estimated Payments)',
+        icon: '\u{1F4B0}',
+        status: 'missing',
+        snippet: 'Not yet uploaded',
+        fields: []
+      },
+      {
+        id: 'expense-report',
+        name: 'Business Expense Report',
+        icon: '\u{1F9FE}',
+        status: 'parsed',
+        snippet: 'Expenses: $52,300',
+        fields: [
+          { section: 'Summary', items: [
+            { label: 'Total Expenses', value: '$52,300' },
+            { label: 'Categories', value: '7 categories' }
+          ]},
+          { section: 'By Category', items: [
+            { label: 'Advertising & Marketing', value: '$4,200' },
+            { label: 'Vehicle / Mileage', value: '$8,100' },
+            { label: 'Insurance', value: '$6,800' },
+            { label: 'Office Supplies', value: '$3,400' },
+            { label: 'Rent / Lease', value: '$18,000' },
+            { label: 'Utilities', value: '$2,400' },
+            { label: 'Home Office Deduction', value: '$9,400' }
+          ]}
+        ]
+      }
+    ];
+
+    const strategySavings = [
+      { id: 'augusta-rule', name: 'Augusta Rule', amount: 28000, taxImpact: 6720, screen: 'strategy-detail-screen' }
+    ];
+
+    let taxDocsShowAll = false;
+
+    function renderTaxPrepDocs() {
+      const container = document.getElementById('tax-prep-docs-list');
+      if (!container) return;
+
+      // Sort: parsed first, then received, then missing
+      const order = { parsed: 0, received: 1, missing: 2 };
+      const sorted = [...taxPrepDocs].sort((a, b) => order[a.status] - order[b.status]);
+
+      const docsToShow = taxDocsShowAll ? sorted : sorted.slice(0, 5);
+      const remaining = sorted.length - 5;
+
+      let html = '';
+      docsToShow.forEach((doc, idx) => {
+        const statusLabel = doc.status === 'parsed' ? 'Ready' : doc.status === 'received' ? 'Received' : 'Missing';
+        html += `
+          <div class="tax-prep-doc-item" onclick="openTaxDocDetail('${doc.id}')">
+            <div class="tax-prep-doc-icon">${doc.icon}</div>
+            <div class="tax-prep-doc-info">
+              <div class="tax-prep-doc-name">${doc.name}</div>
+              <div class="tax-prep-doc-snippet">${doc.snippet}</div>
+            </div>
+            <span class="doc-status ${doc.status}">${statusLabel}</span>
+          </div>
+        `;
+      });
+
+      if (!taxDocsShowAll && remaining > 0) {
+        html += `
+          <div class="tax-prep-more-link">
+            <button onclick="toggleAllTaxDocs()">+${remaining} more documents</button>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+      updateTaxPrepProgress();
+    }
+
+    function toggleAllTaxDocs() {
+      taxDocsShowAll = !taxDocsShowAll;
+      const btn = document.getElementById('tax-prep-view-all');
+      if (btn) btn.textContent = taxDocsShowAll ? 'Show Less' : 'View All';
+      renderTaxPrepDocs();
+    }
+
+    function updateTaxPrepProgress() {
+      const total = taxPrepDocs.length;
+      const received = taxPrepDocs.filter(d => d.status === 'parsed' || d.status === 'received').length;
+      const pct = Math.round((received / total) * 100);
+
+      const pctEl = document.getElementById('tax-prep-pct');
+      const countEl = document.getElementById('tax-prep-count');
+      const fillEl = document.getElementById('tax-prep-fill');
+
+      if (pctEl) pctEl.textContent = pct;
+      if (countEl) countEl.textContent = received;
+      if (fillEl) fillEl.style.width = pct + '%';
+    }
+
+    function openTaxDocDetail(docId) {
+      const doc = taxPrepDocs.find(d => d.id === docId);
+      if (!doc) return;
+
+      document.getElementById('tax-doc-modal-title').textContent = doc.name;
+
+      const statusEl = document.getElementById('tax-doc-modal-status');
+      const statusLabel = doc.status === 'parsed' ? 'Ready' : doc.status === 'received' ? 'Received' : 'Missing';
+      statusEl.textContent = statusLabel;
+      statusEl.className = 'doc-status ' + doc.status;
+
+      const body = document.getElementById('tax-doc-modal-body');
+      const primaryBtn = document.getElementById('tax-doc-modal-primary');
+
+      if (doc.status === 'parsed') {
+        let fieldsHtml = '';
+        doc.fields.forEach(section => {
+          fieldsHtml += `<div class="parsed-field-section"><h4>${section.section}</h4>`;
+          section.items.forEach(item => {
+            fieldsHtml += `
+              <div class="parsed-field">
+                <span class="field-label">${item.label}</span>
+                <span class="field-value">${item.value}</span>
+              </div>
+            `;
+          });
+          fieldsHtml += '</div>';
+        });
+        body.innerHTML = fieldsHtml;
+        primaryBtn.textContent = 'View Full Document';
+        primaryBtn.onclick = function() { closeTaxDocModal(); };
+      } else if (doc.status === 'received') {
+        body.innerHTML = `
+          <div class="tax-doc-processing">
+            <div class="processing-icon">\u{1F504}</div>
+            <h4>Extracting Data</h4>
+            <p>We're scanning and parsing this document. This usually takes a few minutes.</p>
+            <div class="processing-bar"><div class="processing-fill"></div></div>
+          </div>
+        `;
+        primaryBtn.textContent = 'Close';
+        primaryBtn.onclick = function() { closeTaxDocModal(); };
+      } else {
+        body.innerHTML = `
+          <div class="tax-doc-missing">
+            <div class="missing-icon">\u{1F4C2}</div>
+            <h4>Document Not Uploaded</h4>
+            <p>We need this document to complete your tax preparation. Upload it now to keep things moving.</p>
+            <button class="upload-btn" onclick="closeTaxDocModal(); showScreen('upload-screen');">\u{2B06}\uFE0F Upload Now</button>
+          </div>
+        `;
+        primaryBtn.textContent = 'Upload Document';
+        primaryBtn.onclick = function() { closeTaxDocModal(); showScreen('upload-screen'); };
+      }
+
+      const page = document.getElementById('case-home-screen');
+      const modal = document.getElementById('tax-doc-modal');
+      modal.style.top = page.scrollTop + 'px';
+      modal.style.height = page.clientHeight + 'px';
+      modal.classList.add('active');
+      page.style.overflow = 'hidden';
+    }
+
+    function closeTaxDocModal() {
+      document.getElementById('tax-doc-modal').classList.remove('active');
+      document.getElementById('case-home-screen').style.overflow = '';
+    }
+
     // ==================== DOCUMENT HUB FUNCTIONALITY ====================
 
     const augustaDocs = {
@@ -8573,6 +9600,7 @@
     // Initialize next task on page load
     document.addEventListener('DOMContentLoaded', () => {
       renderNextTask();
+      renderTaxPrepDocs();
     });
 
     // Also render when showing the dashboard
@@ -8581,6 +9609,9 @@
       originalShowScreen(screenId);
       if (screenId === 'dashboard-screen') {
         renderNextTask();
+      }
+      if (screenId === 'case-home-screen') {
+        renderTaxPrepDocs();
       }
     };
 
