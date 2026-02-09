@@ -1343,8 +1343,8 @@
     }
 
     .doc-status.received {
-      background: #E3F2FD;
-      color: #1976D2;
+      background: var(--gold-light);
+      color: var(--gold-dark);
     }
 
     /* ==================== TAX DOC DETAIL MODAL ==================== */
@@ -9224,7 +9224,7 @@
 
       let html = '';
       docsToShow.forEach((doc, idx) => {
-        const statusLabel = doc.status === 'parsed' ? 'Ready' : doc.status === 'received' ? 'Received' : 'Missing';
+        const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'Pending' : 'Missing';
         html += `
           <div class="tax-prep-doc-item" onclick="openTaxDocDetail('${doc.id}')">
             <div class="tax-prep-doc-icon">${doc.icon}</div>
@@ -9277,7 +9277,7 @@
       document.getElementById('tax-doc-modal-title').textContent = doc.name;
 
       const statusEl = document.getElementById('tax-doc-modal-status');
-      const statusLabel = doc.status === 'parsed' ? 'Ready' : doc.status === 'received' ? 'Received' : 'Missing';
+      const statusLabel = doc.status === 'parsed' ? 'Uploaded' : doc.status === 'received' ? 'Pending' : 'Missing';
       statusEl.textContent = statusLabel;
       statusEl.className = 'doc-status ' + doc.status;
 
