@@ -4541,15 +4541,16 @@
 
     .strategy-tab {
       flex: 1;
-      padding: 16px 12px;
+      padding: 16px 8px;
       background: none;
       border: none;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--gray-500);
       cursor: pointer;
       position: relative;
       transition: color 0.2s ease;
+      white-space: nowrap;
     }
 
     .strategy-tab.active {
@@ -4568,13 +4569,14 @@
 
     .strategy-tab-badge {
       display: inline-block;
-      margin-left: 6px;
-      padding: 2px 6px;
+      margin-left: 4px;
+      padding: 1px 5px;
       background: var(--gray-200);
       color: var(--gray-700);
-      border-radius: 12px;
-      font-size: 11px;
+      border-radius: 10px;
+      font-size: 10px;
       font-weight: 700;
+      vertical-align: middle;
     }
 
     .strategy-tab.active .strategy-tab-badge {
@@ -4966,6 +4968,457 @@
     .document-desc {
       font-size: 12px;
       color: var(--gray-600);
+    }
+
+    /* ==================== DOCUMENT HUB ==================== */
+
+    .doc-hub-progress {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .doc-hub-progress-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+    }
+
+    .doc-hub-progress-bar {
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .doc-hub-progress-fill {
+      height: 100%;
+      background: linear-gradient(135deg, var(--teal-primary), var(--teal-dark));
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .doc-hub-section {
+      margin-bottom: 24px;
+    }
+
+    .doc-hub-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .doc-hub-item {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      gap: 0 10px;
+      align-items: center;
+      padding: 12px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .doc-hub-item:hover {
+      border-color: var(--teal-primary);
+    }
+
+    .doc-hub-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      align-self: center;
+    }
+
+    .doc-hub-icon.generate { background: #E8F4FF; }
+    .doc-hub-icon.upload { background: var(--purple-light); }
+
+    .doc-hub-info {
+      min-width: 0;
+    }
+
+    .doc-hub-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+      line-height: 1.3;
+    }
+
+    .doc-hub-desc {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    .doc-hub-source {
+      font-size: 10px;
+      color: var(--gray-400);
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .doc-hub-source-tag {
+      display: inline-block;
+      padding: 1px 6px;
+      background: var(--gray-100);
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    .doc-hub-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .doc-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .doc-status.ready {
+      background: #E8FFE8;
+      color: #4CAF50;
+    }
+
+    .doc-status.missing {
+      background: var(--gold-light);
+      color: var(--gold-dark);
+    }
+
+    .doc-status.pending {
+      background: var(--gray-100);
+      color: var(--gray-500);
+    }
+
+    .doc-action-btn {
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--teal-primary);
+      background: transparent;
+      color: var(--teal-primary);
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .doc-action-btn:hover {
+      background: var(--teal-light);
+    }
+
+    .doc-action-btn.upload-btn {
+      border-color: var(--gold-primary);
+      color: var(--gold-dark);
+    }
+
+    .doc-action-btn.upload-btn:hover {
+      background: var(--gold-light);
+    }
+
+    .doc-action-btn.pending-btn {
+      border-color: var(--gray-400);
+      color: var(--gray-500);
+    }
+
+    /* ==================== DAY TRACKER ==================== */
+
+    .day-tracker {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+
+    .day-tracker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .day-tracker-header h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .day-tracker-count {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-primary);
+    }
+
+    .day-tracker-bar {
+      height: 10px;
+      background: var(--gray-200);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .day-tracker-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      background: var(--teal-primary);
+      transition: width 0.5s ease, background 0.5s ease;
+    }
+
+    .day-tracker-bar-fill.warning {
+      background: var(--gold-primary);
+    }
+
+    .day-tracker-bar-fill.danger {
+      background: var(--red-error);
+    }
+
+    .day-tracker-warning {
+      display: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .day-tracker-warning.show {
+      display: block;
+    }
+
+    .day-tracker-warning.amber {
+      background: var(--gold-light);
+      color: var(--gold-dark);
+    }
+
+    .day-tracker-warning.red {
+      background: #FFEBEE;
+      color: var(--red-error);
+    }
+
+    .day-tracker-label {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+
+    .day-tracker-events {
+      margin-top: 12px;
+    }
+
+    .day-tracker-event {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .day-tracker-event:last-child {
+      border-bottom: none;
+    }
+
+    .day-tracker-event-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal-primary);
+      flex-shrink: 0;
+    }
+
+    .day-tracker-event.upcoming .day-tracker-event-dot {
+      background: var(--gray-300);
+      border: 2px solid var(--gray-400);
+      width: 6px;
+      height: 6px;
+    }
+
+    .day-tracker-event-info {
+      flex: 1;
+    }
+
+    .day-tracker-event-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+
+    .day-tracker-event-date {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 1px;
+    }
+
+    .day-tracker-event-days {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-600);
+      flex-shrink: 0;
+    }
+
+    .day-tracker-event-check {
+      color: var(--teal-primary);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ==================== DOC PREVIEW MODAL ==================== */
+
+    .doc-preview-modal {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .doc-preview-modal.active {
+      display: flex;
+    }
+
+    .doc-preview-sheet {
+      width: 100%;
+      max-height: 80%;
+      background: var(--white);
+      border-radius: 24px 24px 0 0;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease;
+    }
+
+    .doc-preview-header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      padding: 20px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .doc-preview-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .doc-preview-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .doc-preview-body {
+      padding: 20px;
+    }
+
+    .doc-preview-content {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--gray-700);
+    }
+
+    .doc-preview-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 16px 0 8px;
+    }
+
+    .doc-preview-content .doc-field {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--gray-200);
+    }
+
+    .doc-preview-content .doc-field-label {
+      color: var(--gray-500);
+      font-size: 12px;
+    }
+
+    .doc-preview-content .doc-field-value {
+      font-weight: 600;
+      color: var(--gray-800);
+      font-size: 12px;
+    }
+
+    .doc-preview-content .doc-section-title {
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gray-800);
+    }
+
+    .doc-preview-content .signature-line {
+      border-top: 1px solid var(--gray-800);
+      margin-top: 40px;
+      padding-top: 6px;
+      font-size: 11px;
+      color: var(--gray-500);
+      width: 60%;
+    }
+
+    .doc-preview-content .agenda-item {
+      padding: 8px 0;
+      border-left: 3px solid var(--teal-primary);
+      padding-left: 12px;
+      margin-bottom: 8px;
+    }
+
+    .doc-preview-content .agenda-time {
+      font-size: 11px;
+      color: var(--teal-primary);
+      font-weight: 700;
+    }
+
+    .doc-preview-actions {
+      padding: 16px 20px 24px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .doc-preview-actions .btn-primary,
+    .doc-preview-actions .btn-secondary {
+      flex: 1;
+      padding: 14px 20px;
+      font-size: 14px;
     }
 
   </style>
@@ -5509,7 +5962,7 @@
         <div class="strategy-tabs">
           <button class="strategy-tab active" onclick="switchStrategyTab('overview')">Overview</button>
           <button class="strategy-tab" onclick="switchStrategyTab('tasks')">Tasks <span class="strategy-tab-badge">11</span></button>
-          <button class="strategy-tab" onclick="switchStrategyTab('documents')">Documents</button>
+          <button class="strategy-tab" onclick="switchStrategyTab('documents')">Documents <span class="strategy-tab-badge" id="doc-tab-badge">3</span></button>
         </div>
 
         <div class="strategy-tab-content active" id="content-overview">
@@ -5683,37 +6136,193 @@
         <!-- DOCUMENTS TAB -->
         <div class="strategy-tab-content" id="content-documents">
           <div class="strategy-content">
-            <h3 style="margin-bottom:20px;">Required Documents</h3>
-            <div class="document-list">
-              <div class="document-item">
-                <div class="document-icon">📄</div>
-                <div class="document-info">
-                  <div class="document-name">Written Rental Agreement</div>
-                  <div class="document-desc">Agreement between you and your business entity</div>
+
+            <!-- Progress Bar -->
+            <div class="doc-hub-progress">
+              <div class="doc-hub-progress-label" id="doc-progress-label">5 of 9 documents ready</div>
+              <div class="doc-hub-progress-bar">
+                <div class="doc-hub-progress-fill" id="doc-progress-fill" style="width: 55.5%"></div>
+              </div>
+            </div>
+
+            <!-- Auto-Generated Documents -->
+            <div class="doc-hub-section">
+              <div class="doc-hub-section-title">Auto-Generated Documents</div>
+
+              <div class="doc-hub-item" id="doc-rental-agreement">
+                <div class="doc-hub-icon generate">📄</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Formal Rental Agreement</div>
+                  <div class="doc-hub-desc">Rental terms between homeowner & business</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">1040 Return</span> <span class="doc-hub-source-tag">Business Return</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status ready">✓ Ready</span>
+                  <button class="doc-action-btn" onclick="openDocPreview('rental-agreement')">View</button>
                 </div>
               </div>
-              <div class="document-item">
-                <div class="document-icon">📋</div>
-                <div class="document-info">
-                  <div class="document-name">Meeting Minutes Template</div>
-                  <div class="document-desc">Documentation of business meetings held at home</div>
+
+              <div class="doc-hub-item" id="doc-corporate-resolution">
+                <div class="doc-hub-icon generate">📋</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Corporate Resolution</div>
+                  <div class="doc-hub-desc">Board authorization for property rental</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">Business Return</span> <span class="doc-hub-source-tag">Operating Agreement</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status ready">✓ Ready</span>
+                  <button class="doc-action-btn" onclick="openDocPreview('corporate-resolution')">View</button>
                 </div>
               </div>
-              <div class="document-item">
-                <div class="document-icon">💵</div>
-                <div class="document-info">
-                  <div class="document-name">Invoice Templates</div>
-                  <div class="document-desc">Quarterly invoices for rental fees</div>
+
+              <div class="doc-hub-item" id="doc-q1-invoice">
+                <div class="doc-hub-icon generate">💵</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Q1 Rental Invoice</div>
+                  <div class="doc-hub-desc">Invoice for Q1 rental days</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">1040 Return</span> <span class="doc-hub-source-tag">Business Return</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status ready">✓ Ready</span>
+                  <button class="doc-action-btn" onclick="openDocPreview('q1-invoice')">View</button>
                 </div>
               </div>
-              <div class="document-item">
-                <div class="document-icon">🏠</div>
-                <div class="document-info">
-                  <div class="document-name">Comparable Rental Rates</div>
-                  <div class="document-desc">Market research for fair rental value</div>
+
+              <div class="doc-hub-item" id="doc-agenda-template">
+                <div class="doc-hub-icon generate">📝</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Meeting Agenda Template</div>
+                  <div class="doc-hub-desc">Pre-filled agenda for business meetings</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">1040 Return</span> <span class="doc-hub-source-tag">Business Return</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status ready">✓ Ready</span>
+                  <button class="doc-action-btn" onclick="openDocPreview('agenda-template')">View</button>
+                </div>
+              </div>
+
+              <div class="doc-hub-item" id="doc-1099-misc">
+                <div class="doc-hub-icon generate">🏛</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Form 1099-MISC</div>
+                  <div class="doc-hub-desc">Generated at year-end for tax filing</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">1040 Return</span> <span class="doc-hub-source-tag">Business Return</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status pending">Pending</span>
+                  <button class="doc-action-btn pending-btn" onclick="openDocPreview('1099-misc')">Generate</button>
+                </div>
+              </div>
+
+              <div class="doc-hub-item" id="doc-fmv-research">
+                <div class="doc-hub-icon generate">🔍</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">FMV Comparable Research</div>
+                  <div class="doc-hub-desc">Rental comps pulled for your zip code</div>
+                  <div class="doc-hub-source">Sourced from <span class="doc-hub-source-tag">1040 Return</span> <span class="doc-hub-source-tag">Airbnb</span> <span class="doc-hub-source-tag">VRBO</span></div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status ready">✓ Ready</span>
+                  <button class="doc-action-btn" onclick="openDocPreview('fmv-research')">View</button>
                 </div>
               </div>
             </div>
+
+            <!-- Your Uploads -->
+            <div class="doc-hub-section">
+              <div class="doc-hub-section-title">Your Uploads</div>
+
+              <div class="doc-hub-item" id="doc-proof-of-payment">
+                <div class="doc-hub-icon upload">💳</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Proof of Payment (Q1)</div>
+                  <div class="doc-hub-desc">Bank transfer or check image for Q1</div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status missing">Missing</span>
+                  <button class="doc-action-btn upload-btn" onclick="simulateUpload('proof-of-payment')">Upload</button>
+                </div>
+              </div>
+
+              <div class="doc-hub-item" id="doc-meeting-minutes">
+                <div class="doc-hub-icon upload">📒</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Meeting Minutes (Q1)</div>
+                  <div class="doc-hub-desc">Notes from Q1 business meetings</div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status missing">Missing</span>
+                  <button class="doc-action-btn upload-btn" onclick="simulateUpload('meeting-minutes')">Upload</button>
+                </div>
+              </div>
+
+              <div class="doc-hub-item" id="doc-property-photos">
+                <div class="doc-hub-icon upload">📷</div>
+                <div class="doc-hub-info">
+                  <div class="doc-hub-name">Property Photos</div>
+                  <div class="doc-hub-desc">Photos of meeting space used for business</div>
+                </div>
+                <div class="doc-hub-actions">
+                  <span class="doc-status missing">Missing</span>
+                  <button class="doc-action-btn upload-btn" onclick="simulateUpload('property-photos')">Upload</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 14-Day Rental Tracker -->
+            <div class="doc-hub-section">
+              <div class="doc-hub-section-title">14-Day Rental Tracker</div>
+              <div class="day-tracker">
+                <div class="day-tracker-header">
+                  <h3>Rental Day Tracker</h3>
+                  <div class="day-tracker-count" id="day-tracker-count">3 / 14 days</div>
+                </div>
+                <div class="day-tracker-bar">
+                  <div class="day-tracker-bar-fill" id="day-tracker-fill" style="width: 21.4%"></div>
+                </div>
+                <div class="day-tracker-label">Days used this tax year</div>
+                <div class="day-tracker-warning" id="day-tracker-warning"></div>
+                <div class="day-tracker-events" id="day-tracker-events">
+                  <div class="day-tracker-event">
+                    <div class="day-tracker-event-dot"></div>
+                    <div class="day-tracker-event-info">
+                      <div class="day-tracker-event-name">Q1 Board Meeting</div>
+                      <div class="day-tracker-event-date">Mar 14</div>
+                    </div>
+                    <div class="day-tracker-event-days">1 day</div>
+                    <div class="day-tracker-event-check">✓</div>
+                  </div>
+                  <div class="day-tracker-event">
+                    <div class="day-tracker-event-dot"></div>
+                    <div class="day-tracker-event-info">
+                      <div class="day-tracker-event-name">Q1 Planning Session</div>
+                      <div class="day-tracker-event-date">Mar 15</div>
+                    </div>
+                    <div class="day-tracker-event-days">1 day</div>
+                    <div class="day-tracker-event-check">✓</div>
+                  </div>
+                  <div class="day-tracker-event">
+                    <div class="day-tracker-event-dot"></div>
+                    <div class="day-tracker-event-info">
+                      <div class="day-tracker-event-name">Q1 Client Review</div>
+                      <div class="day-tracker-event-date">Mar 28</div>
+                    </div>
+                    <div class="day-tracker-event-days">1 day</div>
+                    <div class="day-tracker-event-check">✓</div>
+                  </div>
+                  <div class="day-tracker-event upcoming">
+                    <div class="day-tracker-event-dot"></div>
+                    <div class="day-tracker-event-info">
+                      <div class="day-tracker-event-name">Q2 Board Meeting</div>
+                      <div class="day-tracker-event-date">Jun 14</div>
+                    </div>
+                    <div class="day-tracker-event-days">1 day</div>
+                    <div class="day-tracker-event-check" style="color:var(--gray-400)">○</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -5726,6 +6335,23 @@
             Ask Drew More Questions
           </button>
           <button class="btn-secondary" onclick="showScreen('case-home-screen')">Back to Dashboard</button>
+        </div>
+
+        <!-- DOCUMENT PREVIEW MODAL (inside page so transform containment works) -->
+        <div class="doc-preview-modal" id="doc-preview-modal" onclick="if(event.target === this) closeDocPreview()">
+          <div class="doc-preview-sheet">
+            <div class="doc-preview-header">
+              <h3 id="doc-preview-title">Document Preview</h3>
+              <button class="doc-preview-close" onclick="closeDocPreview()">✕</button>
+            </div>
+            <div class="doc-preview-body">
+              <div class="doc-preview-content" id="doc-preview-content"></div>
+            </div>
+            <div class="doc-preview-actions">
+              <button class="btn-primary" onclick="alert('PDF download simulated!')">Download PDF</button>
+              <button class="btn-secondary" onclick="alert('Email sent (simulated)!')">Send to Email</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -5778,6 +6404,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Hidden file input for document uploads -->
+      <input type="file" id="doc-file-input" accept="image/*,.pdf,.doc,.docx" style="display:none" onchange="handleDocFileSelected(this)">
 
       <!-- DOCUMENT SCANNING SCREEN -->
       <div id="scanning-screen" class="page">
@@ -7680,6 +8309,200 @@
 
     function toggleReminder(checkbox) {
       checkbox.classList.toggle('checked');
+    }
+
+    // ==================== DOCUMENT HUB FUNCTIONALITY ====================
+
+    const augustaDocs = {
+      'rental-agreement':     { name: 'Formal Rental Agreement',  status: 'ready',   type: 'generate' },
+      'corporate-resolution': { name: 'Corporate Resolution',     status: 'ready',   type: 'generate' },
+      'q1-invoice':           { name: 'Q1 Rental Invoice',        status: 'ready',   type: 'generate' },
+      'agenda-template':      { name: 'Meeting Agenda Template',  status: 'ready',   type: 'generate' },
+      '1099-misc':            { name: 'Form 1099-MISC',           status: 'pending', type: 'generate' },
+      'fmv-research':         { name: 'FMV Comparable Research',  status: 'ready',   type: 'generate' },
+      'proof-of-payment':     { name: 'Proof of Payment (Q1)',    status: 'missing', type: 'upload' },
+      'meeting-minutes':      { name: 'Meeting Minutes (Q1)',     status: 'missing', type: 'upload' },
+      'property-photos':      { name: 'Property Photos',          status: 'missing', type: 'upload' },
+    };
+
+    const rentalDays = [
+      { name: 'Q1 Board Meeting',    date: 'Mar 14', days: 1, status: 'completed' },
+      { name: 'Q1 Planning Session', date: 'Mar 15', days: 1, status: 'completed' },
+      { name: 'Q1 Client Review',    date: 'Mar 28', days: 1, status: 'completed' },
+      { name: 'Q2 Board Meeting',    date: 'Jun 14', days: 1, status: 'upcoming' },
+    ];
+
+    function getUserData() {
+      const bizEl = document.getElementById('business-name');
+      const nameEl = document.getElementById('contact-name');
+      const biz = (bizEl && bizEl.value) || 'Your Business LLC';
+      const full = (nameEl && nameEl.value) || 'John Smith';
+      const first = full.split(' ')[0];
+      const last = full.split(' ').slice(1).join(' ') || 'Smith';
+      return { businessName: biz, fullName: full, firstName: first, lastName: last };
+    }
+
+    function getDocTemplate(docId) {
+      const u = getUserData();
+      const year = new Date().getFullYear();
+      const templates = {
+        'rental-agreement': `
+          <div class="doc-section-title">RESIDENTIAL PROPERTY RENTAL AGREEMENT</div>
+          <h4>Parties</h4>
+          <div class="doc-field"><span class="doc-field-label">Landlord (Homeowner)</span><span class="doc-field-value">${u.fullName}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Tenant (Business)</span><span class="doc-field-value">${u.businessName}</span></div>
+          <h4>Property</h4>
+          <div class="doc-field"><span class="doc-field-label">Address</span><span class="doc-field-value">Primary Residence on File</span></div>
+          <div class="doc-field"><span class="doc-field-label">Spaces Available</span><span class="doc-field-value">Living room, dining area, home office</span></div>
+          <h4>Rental Terms</h4>
+          <div class="doc-field"><span class="doc-field-label">Daily Rental Rate</span><span class="doc-field-value">$2,000 / day</span></div>
+          <div class="doc-field"><span class="doc-field-label">Maximum Days</span><span class="doc-field-value">14 days per calendar year</span></div>
+          <div class="doc-field"><span class="doc-field-label">Tax Year</span><span class="doc-field-value">${year}</span></div>
+          <h4>Business Purpose</h4>
+          <p>The premises shall be used exclusively for legitimate business purposes including board meetings, strategic planning sessions, client meetings, and corporate events conducted by ${u.businessName}.</p>
+          <h4>Payment Terms</h4>
+          <p>Payment shall be made by business check or electronic transfer within 30 days of each rental event. Invoices will be issued quarterly.</p>
+          <div class="signature-line">Landlord: ${u.fullName} &nbsp;&nbsp;&nbsp; Date: ___________</div>
+          <div class="signature-line">Authorized Signer, ${u.businessName} &nbsp;&nbsp;&nbsp; Date: ___________</div>
+        `,
+        'corporate-resolution': `
+          <div class="doc-section-title">CORPORATE RESOLUTION</div>
+          <h4>Resolution of ${u.businessName}</h4>
+          <div class="doc-field"><span class="doc-field-label">Entity Name</span><span class="doc-field-value">${u.businessName}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Date of Resolution</span><span class="doc-field-value">January 1, ${year}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Authorized Signer</span><span class="doc-field-value">${u.fullName}</span></div>
+          <h4>Resolved</h4>
+          <p>BE IT RESOLVED, that ${u.businessName} is hereby authorized to rent the personal residence of ${u.fullName} for up to fourteen (14) days during the ${year} calendar year for the purpose of conducting legitimate business activities.</p>
+          <p>BE IT FURTHER RESOLVED, that the rental rate shall be set at fair market value as determined by comparable rental research, not to exceed $2,000 per day.</p>
+          <p>BE IT FURTHER RESOLVED, that ${u.fullName} is authorized to execute the rental agreement and process all payments on behalf of the company.</p>
+          <div class="signature-line">Authorized Signer: ${u.fullName} &nbsp;&nbsp;&nbsp; Date: ___________</div>
+        `,
+        'q1-invoice': `
+          <div class="doc-section-title">RENTAL INVOICE</div>
+          <h4>Invoice Details</h4>
+          <div class="doc-field"><span class="doc-field-label">Invoice Number</span><span class="doc-field-value">INV-${year}-Q1-001</span></div>
+          <div class="doc-field"><span class="doc-field-label">Date Issued</span><span class="doc-field-value">March 31, ${year}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Due Date</span><span class="doc-field-value">April 30, ${year}</span></div>
+          <h4>From (Homeowner)</h4>
+          <div class="doc-field"><span class="doc-field-label">Name</span><span class="doc-field-value">${u.fullName}</span></div>
+          <h4>To (Business Entity)</h4>
+          <div class="doc-field"><span class="doc-field-label">Name</span><span class="doc-field-value">${u.businessName}</span></div>
+          <h4>Line Items</h4>
+          <div class="doc-field"><span class="doc-field-label">Mar 14 — Board Meeting (1 day × $2,000)</span><span class="doc-field-value">$2,000</span></div>
+          <div class="doc-field"><span class="doc-field-label">Mar 15 — Planning Session (1 day × $2,000)</span><span class="doc-field-value">$2,000</span></div>
+          <div class="doc-field"><span class="doc-field-label">Mar 28 — Client Review (1 day × $2,000)</span><span class="doc-field-value">$2,000</span></div>
+          <div class="doc-field" style="border-bottom:2px solid var(--gray-800);font-weight:700"><span class="doc-field-label" style="font-weight:700">Total Due</span><span class="doc-field-value">$6,000</span></div>
+          <h4>Payment Instructions</h4>
+          <p>Please remit payment via business check or electronic transfer to the homeowner within 30 days.</p>
+        `,
+        'agenda-template': `
+          <div class="doc-section-title">BUSINESS MEETING AGENDA</div>
+          <div class="doc-field"><span class="doc-field-label">Date</span><span class="doc-field-value">March 14, ${year}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Location</span><span class="doc-field-value">Residence of ${u.fullName}</span></div>
+          <div class="doc-field"><span class="doc-field-label">Attendees</span><span class="doc-field-value">${u.fullName}, Board Members</span></div>
+          <h4>Agenda Items</h4>
+          <div class="agenda-item"><div class="agenda-time">9:00 AM - 9:30 AM</div><div>Call to Order & Review of Previous Minutes</div></div>
+          <div class="agenda-item"><div class="agenda-time">9:30 AM - 10:15 AM</div><div>Q1 Financial Review & Budget Analysis</div></div>
+          <div class="agenda-item"><div class="agenda-time">10:15 AM - 11:00 AM</div><div>Strategic Growth Planning for ${year}</div></div>
+          <div class="agenda-item"><div class="agenda-time">11:00 AM - 11:45 AM</div><div>Marketing & Client Acquisition Update</div></div>
+          <div class="agenda-item"><div class="agenda-time">11:45 AM - 12:00 PM</div><div>Action Items & Adjournment</div></div>
+        `,
+        '1099-misc': `
+          <div class="doc-section-title">FORM 1099-MISC (PREVIEW)</div>
+          <p style="text-align:center;color:var(--gray-500);margin-bottom:16px;">This form will be auto-generated at year-end based on actual rental payments made during ${year}.</p>
+          <h4>Payer (Business)</h4>
+          <div class="doc-field"><span class="doc-field-label">Name</span><span class="doc-field-value">${u.businessName}</span></div>
+          <div class="doc-field"><span class="doc-field-label">EIN</span><span class="doc-field-value">XX-XXXXXXX</span></div>
+          <h4>Recipient (Homeowner)</h4>
+          <div class="doc-field"><span class="doc-field-label">Name</span><span class="doc-field-value">${u.fullName}</span></div>
+          <div class="doc-field"><span class="doc-field-label">TIN / SSN</span><span class="doc-field-value">XXX-XX-XXXX</span></div>
+          <h4>Amounts</h4>
+          <div class="doc-field"><span class="doc-field-label">Box 1 — Rents</span><span class="doc-field-value">$_____ (calculated at year-end)</span></div>
+          <p style="margin-top:16px;font-size:12px;color:var(--gray-500);">Note: Under IRC Section 280A(g), rental income of 14 days or fewer is excluded from gross income and does not need to be reported on the homeowner's tax return. The business may still deduct the expense.</p>
+        `,
+        'fmv-research': `
+          <div class="doc-section-title">FMV COMPARABLE RESEARCH</div>
+          <p>Fair Market Value analysis for residential rental space used for business purposes.</p>
+          <h4>Comparable Properties</h4>
+          <div class="doc-field"><span class="doc-field-label">VRBO — 3BR Home, Similar Area</span><span class="doc-field-value">$1,850 / day</span></div>
+          <div class="doc-field"><span class="doc-field-label">Airbnb — 4BR Home, Same Zip</span><span class="doc-field-value">$2,200 / day</span></div>
+          <div class="doc-field"><span class="doc-field-label">Conference Venue — Local Hotel</span><span class="doc-field-value">$2,500 / day</span></div>
+          <div class="doc-field" style="border-bottom:2px solid var(--gray-800)"><span class="doc-field-label" style="font-weight:700">Average FMV</span><span class="doc-field-value" style="font-weight:700">$2,183 / day</span></div>
+          <p style="margin-top:12px;">Established rental rate of <strong>$2,000/day</strong> is at or below fair market value and is therefore defensible.</p>
+        `,
+      };
+      return templates[docId] || '<p>Document preview not available.</p>';
+    }
+
+    function openDocPreview(docId) {
+      const doc = augustaDocs[docId];
+      if (!doc) return;
+      document.getElementById('doc-preview-title').textContent = doc.name;
+      document.getElementById('doc-preview-content').innerHTML = getDocTemplate(docId);
+
+      const page = document.getElementById('strategy-detail-screen');
+      const modal = document.getElementById('doc-preview-modal');
+      modal.style.top = page.scrollTop + 'px';
+      modal.style.height = page.clientHeight + 'px';
+      modal.classList.add('active');
+      page.style.overflow = 'hidden';
+    }
+
+    function closeDocPreview() {
+      document.getElementById('doc-preview-modal').classList.remove('active');
+      document.getElementById('strategy-detail-screen').style.overflow = '';
+    }
+
+    let currentUploadDocId = null;
+
+    function simulateUpload(docId) {
+      currentUploadDocId = docId;
+      const fileInput = document.getElementById('doc-file-input');
+      fileInput.value = '';
+      fileInput.click();
+    }
+
+    function handleDocFileSelected(input) {
+      if (!input.files || !input.files.length || !currentUploadDocId) return;
+
+      const docId = currentUploadDocId;
+      const doc = augustaDocs[docId];
+      if (!doc || doc.status === 'ready') return;
+
+      doc.status = 'ready';
+
+      const itemEl = document.getElementById('doc-' + docId);
+      if (itemEl) {
+        const badge = itemEl.querySelector('.doc-status');
+        badge.className = 'doc-status ready';
+        badge.textContent = '✓ Ready';
+
+        const btn = itemEl.querySelector('.doc-action-btn');
+        btn.className = 'doc-action-btn';
+        btn.textContent = 'View';
+        btn.setAttribute('onclick', "openDocPreview('" + docId + "')");
+      }
+
+      updateDocProgress();
+      currentUploadDocId = null;
+    }
+
+    function updateDocProgress() {
+      const total = Object.keys(augustaDocs).length;
+      const ready = Object.values(augustaDocs).filter(d => d.status === 'ready').length;
+      const missing = Object.values(augustaDocs).filter(d => d.status === 'missing').length;
+      const pct = Math.round((ready / total) * 100);
+
+      const label = document.getElementById('doc-progress-label');
+      const fill = document.getElementById('doc-progress-fill');
+      const badge = document.getElementById('doc-tab-badge');
+
+      if (label) label.textContent = ready + ' of ' + total + ' documents ready';
+      if (fill) fill.style.width = pct + '%';
+      if (badge) {
+        badge.textContent = missing;
+        badge.style.display = missing > 0 ? '' : 'none';
+      }
     }
 
     // ==================== DASHBOARD NEXT TASK FUNCTIONALITY ====================
