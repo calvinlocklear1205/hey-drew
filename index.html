@@ -6447,7 +6447,7 @@
         </div>
 
         <!-- Tax Preparation Hub Section -->
-        <div class="tax-prep-section">
+        <div class="tax-prep-section" id="tax-prep-section" style="display: none;">
           <div class="tax-prep-header">
             <span class="tax-prep-header-icon">&#x1f4c1;</span>
             <h3>Tax Preparation</h3>
@@ -8142,7 +8142,7 @@
 
     // Reset function to go back to start
     function resetPrototype() {
-      // Reload the page to fully reset state
+      localStorage.removeItem('taxPrepActive');
       location.reload();
     }
 
@@ -8421,6 +8421,8 @@
 
       // Move to case home so user sees tax docs processing
       setTimeout(() => {
+        localStorage.setItem('taxPrepActive', 'true');
+        showTaxPrepSection();
         showScreen('case-home-screen');
       }, 7000);
     }
@@ -9597,10 +9599,18 @@
       renderNextTask();
     }
 
+    function showTaxPrepSection() {
+      const section = document.getElementById('tax-prep-section');
+      if (section) section.style.display = '';
+    }
+
     // Initialize next task on page load
     document.addEventListener('DOMContentLoaded', () => {
       renderNextTask();
-      renderTaxPrepDocs();
+      if (localStorage.getItem('taxPrepActive') === 'true') {
+        showTaxPrepSection();
+        renderTaxPrepDocs();
+      }
     });
 
     // Also render when showing the dashboard
@@ -9610,7 +9620,7 @@
       if (screenId === 'dashboard-screen') {
         renderNextTask();
       }
-      if (screenId === 'case-home-screen') {
+      if (screenId === 'case-home-screen' && localStorage.getItem('taxPrepActive') === 'true') {
         renderTaxPrepDocs();
       }
     };
