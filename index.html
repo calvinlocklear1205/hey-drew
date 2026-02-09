@@ -9,18 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --teal-light: #E8F7F5;
-      --teal-primary: #5BBFB3;
-      --teal-dark: #3A9D8F;
+      --teal-light: #EAF7EC;
+      --teal-primary: #34C759;
+      --teal-dark: #2DA44E;
       --purple-light: #F0E6FF;
-      --purple-primary: #9B7ED9;
-      --purple-dark: #7B5DC4;
+      --purple-primary: #7B2FBE;
+      --purple-dark: #6A1FAD;
       --gold-light: #FFF4E0;
       --gold-primary: #F5A623;
       --gold-dark: #E09000;
       --orange-primary: #FF8A4D;
       --green-success: #4CD964;
-      --red-error: #FF6B6B;
+      --red-error: #FF3B30;
       --gray-100: #F8F9FA;
       --gray-200: #E9ECEF;
       --gray-300: #DEE2E6;
@@ -178,7 +178,7 @@
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(91, 191, 179, 0.4);
+      box-shadow: 0 4px 15px rgba(52, 199, 89, 0.4);
       position: relative;
       overflow: hidden;
     }
@@ -200,7 +200,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(91, 191, 179, 0.5);
+      box-shadow: 0 8px 25px rgba(52, 199, 89, 0.5);
     }
 
     .btn-primary:active {
@@ -247,7 +247,7 @@
     .input-field {
       width: 100%;
       padding: 16px 20px;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-full);
       border: 2px solid var(--gray-200);
       background: var(--white);
       font-family: 'Nunito', sans-serif;
@@ -259,7 +259,7 @@
     .input-field:focus {
       outline: none;
       border-color: var(--teal-primary);
-      box-shadow: 0 0 0 4px rgba(91, 191, 179, 0.15);
+      box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.15);
     }
 
     .input-field::placeholder {
@@ -268,7 +268,7 @@
 
     .input-field.error {
       border-color: var(--red-error);
-      box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.15);
+      box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15);
     }
 
     .input-error {
@@ -287,7 +287,7 @@
     /* ACCESS TOKEN SCREEN */
     /* ==================== */
     #token-screen {
-      background: linear-gradient(180deg, #E8F7F5 0%, var(--white) 40%);
+      background: linear-gradient(180deg, #EAF7EC 0%, var(--white) 40%);
     }
 
     .token-hero {
@@ -383,7 +383,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, var(--purple-light) 0%, #E8DFFF 100%);
+      background: linear-gradient(135deg, var(--purple-light) 0%, #E0D0FF 100%);
       padding: 10px 20px;
       border-radius: var(--radius-full);
       margin-bottom: 20px;
@@ -1463,7 +1463,7 @@
     }
 
     .thread-message-bubble.system {
-      background: linear-gradient(135deg, var(--teal-light) 0%, #E0F7F4 100%);
+      background: linear-gradient(135deg, var(--teal-light) 0%, #DCF5E0 100%);
       border: 1px solid var(--teal-primary);
     }
 
@@ -1613,7 +1613,7 @@
       cursor: pointer;
       flex-shrink: 0;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(91, 191, 179, 0.3);
+      box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
     }
 
     .thread-send-btn:hover {
@@ -2305,7 +2305,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 25px rgba(91, 191, 179, 0.3);
+      box-shadow: 0 8px 25px rgba(52, 199, 89, 0.3);
     }
 
     .upload-icon svg {
@@ -2821,7 +2821,7 @@
 
     .progress-step.active .progress-dot {
       background: var(--teal-primary);
-      box-shadow: 0 0 0 4px rgba(91, 191, 179, 0.2);
+      box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.2);
     }
 
     .progress-step.completed .progress-dot {
@@ -2874,11 +2874,11 @@
     }
 
     .onboarding-icon.business {
-      background: linear-gradient(135deg, var(--purple-light) 0%, #E0D4F7 100%);
+      background: linear-gradient(135deg, var(--purple-light) 0%, #D9C8F5 100%);
     }
 
     .onboarding-icon.personal {
-      background: linear-gradient(135deg, var(--teal-light) 0%, #D4F0ED 100%);
+      background: linear-gradient(135deg, var(--teal-light) 0%, #C8EDCC 100%);
     }
 
     .onboarding-icon svg {
@@ -3469,7 +3469,7 @@
 
     .upload-card-chat:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(91, 191, 179, 0.3);
+      box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
     }
 
     .upload-card-icon {
@@ -3679,7 +3679,7 @@
       cursor: pointer;
       flex-shrink: 0;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(91, 191, 179, 0.3);
+      box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
     }
 
     .chat-send-btn:hover {
@@ -4257,7 +4257,7 @@
       padding: 20px 40px;
       border-radius: var(--radius-xl);
       margin-bottom: 16px;
-      box-shadow: 0 8px 25px rgba(91, 191, 179, 0.3);
+      box-shadow: 0 8px 25px rgba(52, 199, 89, 0.3);
     }
 
     .found-number {
@@ -4869,7 +4869,7 @@
       align-items: center;
       gap: 10px;
       padding: 12px;
-      background: rgba(91, 191, 179, 0.1);
+      background: rgba(52, 199, 89, 0.1);
       border-radius: 8px;
       margin-top: 12px;
     }
@@ -5373,7 +5373,7 @@
           <div class="quick-action-grid">
             <button class="quick-action-btn" onclick="showScreen('status-screen')">
               <div class="quick-action-icon teal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5BBFB3" stroke-width="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#34C759" stroke-width="2">
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                 </svg>
               </div>
@@ -5381,7 +5381,7 @@
             </button>
             <button class="quick-action-btn" onclick="showScreen('messages-screen')" style="position: relative;">
               <div class="quick-action-icon purple">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#9B7ED9" stroke-width="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#7B2FBE" stroke-width="2">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                 </svg>
               </div>
@@ -5401,7 +5401,7 @@
             </button>
             <button class="quick-action-btn" onclick="showScreen('upload-screen')">
               <div class="quick-action-icon teal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5BBFB3" stroke-width="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#34C759" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                   <polyline points="17 8 12 3 7 8"/>
                   <line x1="12" y1="3" x2="12" y2="15"/>
