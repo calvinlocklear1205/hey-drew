@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeyDrew — Screen Gallery (for Figma Import)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #F8F9FA;
+      padding: 32px;
+    }
+    h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #343A40;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #6C757D;
+      font-size: 15px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .subtitle code {
+      background: #E9ECEF;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #495057;
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E9ECEF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #343A40;
+      margin-bottom: 4px;
+    }
+    .card-id {
+      font-size: 12px;
+      color: #ADB5BD;
+      margin-bottom: 12px;
+      font-family: monospace;
+    }
+    .links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .links a {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .links a:hover { opacity: 0.85; }
+    .link-mobile {
+      background: linear-gradient(135deg, #5BBFB3, #3A9D8F);
+      color: white;
+    }
+    .link-desktop {
+      background: linear-gradient(135deg, #9B7ED9, #7B5DC4);
+      color: white;
+    }
+    .link-admin {
+      background: linear-gradient(135deg, #F5A623, #FF9F43);
+      color: white;
+    }
+    .instructions {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .instructions ol {
+      padding-left: 20px;
+      color: #495057;
+      line-height: 1.8;
+    }
+    .instructions li { margin-bottom: 4px; }
+    .instructions strong { color: #343A40; }
+  </style>
+</head>
+<body>
+  <h1>HeyDrew Screen Gallery</h1>
+  <p class="subtitle">
+    Each link opens a single screen from the prototype, ready for the
+    <strong>html.to.design</strong> Figma plugin to capture as editable layers.
+  </p>
+
+  <div class="instructions">
+    <ol>
+      <li>Run <code>npx serve .</code> from the <code>hey-drew</code> folder</li>
+      <li>Open this page at <code>http://localhost:3000/screens.html</code></li>
+      <li>In Figma, open the <strong>html.to.design</strong> plugin</li>
+      <li>Click any link below — it opens the screen in a new tab</li>
+      <li>Copy that tab's URL into the plugin and import</li>
+      <li>Repeat for each screen you need</li>
+    </ol>
+  </div>
+
+  <h2>Onboarding & Auth</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Token / Invite Screen</div>
+      <div class="card-id">token-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=token-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=token-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Sign Up</div>
+      <div class="card-id">signup-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=signup-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=signup-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Business Profile</div>
+      <div class="card-id">business-profile-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=business-profile-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=business-profile-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Personal Profile</div>
+      <div class="card-id">personal-profile-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=personal-profile-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=personal-profile-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Profile Complete</div>
+      <div class="card-id">profile-complete-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=profile-complete-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=profile-complete-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Core App</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Case Home / Dashboard</div>
+      <div class="card-id">case-home-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=case-home-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=case-home-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Chat with Drew</div>
+      <div class="card-id">chat-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=chat-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=chat-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Document Upload</div>
+      <div class="card-id">upload-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=upload-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=upload-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Status Tracker</div>
+      <div class="card-id">status-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=status-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=status-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Settings</div>
+      <div class="card-id">settings-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=settings-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=settings-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Strategy Flow</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Scanning Documents</div>
+      <div class="card-id">scanning-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=scanning-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=scanning-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Analyzing</div>
+      <div class="card-id">analyzing-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=analyzing-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=analyzing-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Strategies Found</div>
+      <div class="card-id">strategies-found-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=strategies-found-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=strategies-found-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Strategy Detail</div>
+      <div class="card-id">strategy-detail-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=strategy-detail-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=strategy-detail-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Messages</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Messages List</div>
+      <div class="card-id">messages-screen</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=messages-screen" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=messages-screen" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Thread 1</div>
+      <div class="card-id">message-thread-1</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=message-thread-1" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=message-thread-1" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Thread 2</div>
+      <div class="card-id">message-thread-2</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=message-thread-2" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=message-thread-2" target="_blank">Desktop</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Thread 3</div>
+      <div class="card-id">message-thread-3</div>
+      <div class="links">
+        <a class="link-mobile" href="index.html?screen=message-thread-3" target="_blank">Mobile</a>
+        <a class="link-desktop" href="desktop.html?screen=message-thread-3" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Admin Dashboard</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Admin Dashboard</div>
+      <div class="card-id">admin.html</div>
+      <div class="links">
+        <a class="link-admin" href="admin.html" target="_blank">Open Admin</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

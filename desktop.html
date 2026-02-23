@@ -8086,6 +8086,15 @@
       }
     };
 
+    // Auto-navigate to screen from ?screen= query param (for html.to.design capture)
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const screen = params.get('screen');
+      if (screen && allScreens.includes(screen)) {
+        showScreen(screen);
+      }
+    })();
+
   </script>
 </body>
 </html>
